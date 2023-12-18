@@ -34,3 +34,6 @@ vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<C
 
 vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+
+vim.api.nvim_set_keymap('n', '?', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+

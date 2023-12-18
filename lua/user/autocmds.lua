@@ -59,3 +59,23 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.spell = true
   end,
 })
+-- For .c and .h files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "c", "h" },
+  callback = function()
+    vim.opt_local.expandtab = false
+    vim.opt_local.tabstop = 8
+    vim.opt_local.shiftwidth = 8
+  end,
+})
+
+-- For .cpp and .hpp files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "cpp", "hpp" },
+  callback = function()
+    vim.opt_local.expandtab = true
+    vim.opt_local.tabstop = 4
+    vim.opt_local.shiftwidth = 4
+  end,
+})
+
