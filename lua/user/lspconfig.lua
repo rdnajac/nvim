@@ -50,16 +50,17 @@ function M.config()
 
   local servers = {
     "lua_ls",
-    "cssls",
-    "html",
-    "tsserver",
-    "astro",
-    "pyright",
+    "clangd",
+    --"cssls",
+    --"timeHMStml",
+    --"tsserver",
+    --"astro",
+    --"pyright",
     "bashls",
-    "jsonls",
+    --"jsonls",
     "yamlls",
     "marksman",
-    "tailwindcss",
+    --"tailwindcss",
   }
 
   local default_diagnostic_config = {
