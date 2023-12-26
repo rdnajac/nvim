@@ -1,23 +1,18 @@
+--- autocmds.lua
+-- See `:help autocommands`
+
+-- Removes certain default formatoptions when entering a buffer.
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   callback = function()
     vim.cmd "set formatoptions-=cro"
   end,
 })
 
+-- Sets up buffer-local key mappings and options for specific file types.
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
-    "netrw",
-    "Jaq",
-    "qf",
-    "git",
-    "help",
-    "man",
-    "lspinfo",
-    "spectre_panel",
-    "lir",
-    "DressingSelect",
-    "tsplayground",
-    "",
+    "netrw", "Jaq", "qf", "git", "help", "man", "lspinfo",
+    "spectre_panel", "lir", "DressingSelect", "tsplayground", "",
   },
   callback = function()
     vim.cmd [[
@@ -27,18 +22,21 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- Automatically quits the command-line window when it's entered.
 vim.api.nvim_create_autocmd({ "CmdWinEnter" }, {
   callback = function()
     vim.cmd "quit"
   end,
 })
 
+-- Equalizes the width and height of windows after the Vim window is resized.
 vim.api.nvim_create_autocmd({ "VimResized" }, {
   callback = function()
     vim.cmd "tabdo wincmd ="
   end,
 })
 
+-- Checks for file modifications when entering a buffer.
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
@@ -46,12 +44,15 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- Highlights yanked text briefly after yanking.
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     vim.highlight.on_yank { higroup = "Visual", timeout = 40 }
   end,
 })
 
+-- Auto-command for "FileType" event for gitcommit, markdown, and NeogitCommitMessage.
+-- Enables word wrapping and spell checking in these file types.
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown", "NeogitCommitMessage" },
   callback = function()
@@ -59,7 +60,8 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     vim.opt_local.spell = true
   end,
 })
--- For .c and .h files
+
+-- Sets tab settings specific to C files.
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "c", "h" },
   callback = function()
@@ -69,7 +71,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
--- For .cpp and .hpp files
+-- Sets tab settings specific to C++ files.
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "cpp", "hpp" },
   callback = function()
