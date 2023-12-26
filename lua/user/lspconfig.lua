@@ -103,23 +103,17 @@ function M.config()
       capabilities = M.common_capabilities(),
     }
 
-    -- Custom settings for clangd
-    if server == "clangd" then
-      opts.cmd = { "clangd", "--background-index" }  -- Example: Adding clangd specific command
-      -- You can add other clangd specific options here
-    end
-
     local require_ok, settings = pcall(require, "user.lspsettings." .. server)
     if require_ok then
-        opts = vim.tbl_deep_extend("force", settings, opts)
+      opts = vim.tbl_deep_extend("force", settings, opts)
     end
 
     if server == "lua_ls" then
-        require("neodev").setup {}
+      require("neodev").setup {}
     end
 
     lspconfig[server].setup(opts)
-end
+  end
 end
 
 return M

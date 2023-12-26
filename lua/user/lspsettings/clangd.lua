@@ -1,10 +1,16 @@
-local cmp_nvim_lsp = require "cmp_nvim_lsp"
+return {
+  settings = {
+    clangd = {
+        cmd = { "clangd",
+                "--background-index",
+                "--clang-tidy",
+                "--suggest-missing-includes",
+                "--offset-encoding=utf-16",
 
-require("lspconfig").clangd.setup {
-  on_attach = on_attach,
-  capabilities = cmp_nvim_lsp.default_capabilities(),
-  cmd = {
-    "clangd",
-    "--offset-encoding=utf-16",
-  },
+            },
+            filetypes = { "cpp", "hpp" },
+            extraArgs = { "-std=c++20" },
+        },
+    },
 }
+

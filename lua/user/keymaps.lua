@@ -37,3 +37,16 @@ vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 vim.api.nvim_set_keymap('n', '?', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 
+-- Buffer Management
+keymap('n', 'L', ':bnext<CR>', opts)
+keymap('n', 'H', ':bprevious<CR>', opts)
+keymap('n', '<leader>bl', ':ls<CR>', opts)
+--keymap('n', '<Leader>h', toggle_hlsearch, { expr = true, silent = true })
+
+-- Vim keymaps
+keymap('i', 'jk', '<esc>', opts)
+keymap('n', '<leader>w', ':w!<cr>', opts)
+keymap('n', '<leader>q', ':bp <BAR> bd #<CR>', opts)
+keymap('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', opts)
+
+
