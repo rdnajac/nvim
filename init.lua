@@ -1,63 +1,59 @@
 --- init.lua
 -- This is the main configuration file for Neovim, written in Lua.
--- It is responsible for loading various user configuration modules.
+-- It is responsible for loading various plugin.configuration modules.
 
 -- Core Modules
-require "user.launch"       -- Handles the launch configuration of Neovim.
-require "user.options"      -- Sets up Neovim options and general settings.
-require "user.keymaps"      -- Configures key mappings.
-require "user.autocmds"     -- Defines autocommands for automated tasks.
+require "launch"       -- Handles the launch configuration of Neovim.
+require "options"      -- Sets up Neovim options and general settings.
+require "keymaps"      -- Configures key mappings.
+require "autocmds"     -- Defines autocommands for automated tasks.
 
 -- Plugin Specifications
 -- The 'spec' function is used to specify plugin configurations (???).
 
 -- User Interface Enhancements
-spec "user.colorscheme"    -- Color scheme customization
-spec "user.alpha"          -- Customizable start screen
-spec "user.lualine"        -- Status line configuration
-spec "user.devicons"       -- File icons
-spec "user.indentline"     -- Visual indentation guides
-spec "user.diffview"       -- Git diff visualization
+spec "plugin.colorscheme"    -- Color scheme customization
+spec "plugin.alpha"          -- Customizable start screen
+spec "plugin.lualine"        -- Status line configuration
+spec "plugin.devicons"       -- File icons
+spec "plugin.indentline"     -- Visual indentation guides
+spec "plugin.diffview"       -- Git diff visualization
 
 -- File and Project Navigation
-spec "user.nvimtree"       -- File explorer
-spec "user.telescope"      -- Fuzzy finder
-spec "user.telescope-tabs" -- Tab management with Telescope
-spec "user.project"        -- Project management
+spec "plugin.nvimtree"       -- File explorer
+spec "plugin.telescope"      -- Fuzzy finder
+spec "plugin.telescope-tabs" -- Tab management with Telescope
+spec "plugin.project"        -- Project management
 
--- Coding and Syntax Tools
-spec "user.treesitter"     -- Enhanced syntax highlighting and parsing
-spec "user.autopairs"      -- Auto pairing of brackets and quotes
-spec "user.comment"        -- Easy commenting of code blocks
+-- Coding Completion and Syntax Tools
+spec "plugin.treesitter"     -- Enhanced syntax highlighting and parsing
+spec "plugin.autopairs"      -- Auto pairing of brackets and quotes
+spec "plugin.comment"        -- Easy commenting of code blocks
+spec "plugin.cmp"            -- Completion engine configurations
 
 -- Git Integration
-spec "user.gitsigns"       -- Git integration with editor signs
-spec "user.neogit"         -- Enhanced Git experience
+spec "plugin.gitsigns"       -- Git integration with editor signs
+spec "plugin.neogit"         -- Enhanced Git experience
 
 -- Language Server Protocol (LSP) and Development Tools
-spec "user.lspconfig"      -- Language server configurations
-spec "user.mason"          -- LSP servers and tools management
-spec "user.null-ls"        -- Integration of linters and formatters
-spec "user.schemastore"    -- JSON schema settings
-spec "user.illuminate"     -- Highlighting of current word usage
-spec "user.navic"          -- Navigation enhancements
+spec "plugin.lspconfig"      -- Language server configurations
+spec "plugin.mason"          -- LSP servers and tools management
+spec "plugin.null-ls"        -- Integration of linters and formatters
+spec "plugin.schemastore"    -- JSON schema settings
+spec "plugin.illuminate"     -- Highlighting of current word usage
+spec "plugin.navic"          -- Navigation enhancements
 
 -- Key Mapping and Commands
-spec "user.keymaps"        -- Custom key mappings
-spec "user.whichkey"       -- Keybinding assistance
-
--- Completion and Editing Tools
-spec "user.cmp"            -- Completion engine configurations
-spec "user.autocmds"       -- Autocommands for automated tasks
+spec "plugin.whichkey"       -- Keybinding assistance
 
 -- Terminal and Shell Integration
-spec "user.toggleterm"     -- Terminal integration
+spec "plugin.toggleterm"     -- Terminal integration
 
 -- Utility and Miscellaneous
-spec "user.breadcrumbs"    -- Breadcrumb navigation
-spec "user.netrw"          -- Built-in file explorer
-spec "user.bufdelete"      -- Buffer deletion without closing windowsi
+spec "plugin.breadcrumbs"    -- Breadcrumb navigation
+spec "plugin.netrw"          -- Built-in file explorer
+spec "plugin.bufdelete"      -- Buffer deletion without closing windows
 
 -- Lazy Loading
-require "user.lazy"        -- Handles lazy loading of certain plugins or configurations.
+require "plugin._lazy"        -- Handles lazy loading of certain plugins or configurations.
 
