@@ -1,0 +1,14 @@
+local M = {}
+
+M.plugin = {
+  -- Replace "YourGitHubUsername/your-plugin-repo" with the actual repository URL.
+  "YourGitHubUsername/your-plugin-repo",
+}
+
+function M.setup()
+  -- Configure the plugin here.
+  -- Example: require(M.plugin).setup()
+end
+
+return M
+
