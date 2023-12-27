@@ -21,8 +21,22 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 end
 
+local function setup_lsp_diags()
+    print("setup_lsp_diags")
+  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+      virtual_text = false,
+      signs = true,
+      update_in_insert = false,
+      underline = true,
+    }
+  )
+end
+
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
+  setup_lsp_diags()
 end
 
 function M.common_capabilities()
