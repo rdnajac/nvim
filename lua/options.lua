@@ -1,4 +1,4 @@
---- options.lua
+-- options.lua
 -- This file configures various options in Neovim.
 -- Options are organized into categories based on their functionality.
 
@@ -10,11 +10,12 @@ local options = {
   smartindent = true,                      -- Make indenting smarter.
   autoindent = true,                       -- Good auto indent.
   smartcase = true,                        -- Smart case.
+  cindent = true,
   ignorecase = true,                       -- Ignore case in search patterns.
   undofile = true,                         -- Enable persistent undo.
   updatetime = 100,                        -- Faster completion (4000ms default).
   timeoutlen = 300,                        -- Time to wait for a mapped sequence to complete (in milliseconds).
-  scrolloff = 8,                           -- Minimum screen lines above/below the cursor.
+  --scrolloff = 8,                           -- Minimum screen lines above/below the cursor.
   sidescrolloff = 8,                       -- Minimum screen columns to the left/right of the cursor.
   number = true,                           -- Show line numbers.
   relativenumber = false,                  -- Show relative line numbers.
@@ -73,3 +74,6 @@ vim.g.netrw_mouse = 2                             -- Set Netrw mouse mode.
 -- Remove Vim runtime path to separate Vim plugins from Neovim
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
 
+vim.cmd [[
+  filetype plugin indent on
+]]

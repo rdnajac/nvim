@@ -22,7 +22,6 @@ local function lsp_keymaps(bufnr)
 end
 
 local function setup_lsp_diags()
-    print("setup_lsp_diags")
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics,
     {

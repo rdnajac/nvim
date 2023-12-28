@@ -28,7 +28,7 @@ local M = {
 }
 function M.config()
   require("nvim-treesitter.configs").setup {
-    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" }, -- put the language you want in this array
+    ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python", "c", "cpp" }, -- put the language you want in this array
     ignore_install = { "" },
     sync_install = false,
     highlight = {
@@ -37,7 +37,10 @@ function M.config()
       additional_vim_regex_highlighting = false,
     },
 
-    indent = { enable = true },
+    indent = {
+      enable = true,
+      disable = {"c"}  -- Disables Treesitter indentation for C
+    },
 
     matchup = {
       enable = { "astro" },

@@ -25,7 +25,7 @@ M.config = function()
     map_char = {
       all = "(",
       tex = "{",
-      comment = "/*",  -- Add mapping for /* */ comments
+      comment = "*/",  -- Add mapping for /* */ comments
     },
 
     --- Enable checking if a bracket is on the same line.
@@ -85,7 +85,7 @@ M.config = function()
 
       --- Characters to trigger fast wrapping.
       -- @table chars
-      chars = { "{", "[", "(", '"', "'", "/*" },  -- Add "*/" for comment wrapping
+      chars = { "{", "[", "(", '"', "'", "*/" },  -- Add "*/" for comment wrapping
 
       --- Pattern for fast wrapping.
       -- @string
