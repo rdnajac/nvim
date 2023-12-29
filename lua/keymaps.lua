@@ -33,7 +33,7 @@ keymap("v", ">", ">gv", opts)
 
 -- Paste over without replacing the clipboard content in visual mode
 keymap("x", "p", [["_dP]])
-
+--
 -- Mouse menu commands for LSP functions
 vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
 vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
@@ -53,7 +53,8 @@ keymap('n', '<leader>bl', ':ls<CR>', opts)
 
 -- Easy saving and quitting mappings
 keymap('i', 'jk', '<esc>', opts)
-keymap('n', '<leader>w', ':w!<cr>', opts)
+-- Map <leader>w to trim whitespace and save
+keymap('n', '<leader>w', ':<C-u>%s/\\s\\+$//e<CR>:write<CR>', opts)
 keymap('n', '<leader>q', ':wqall<cr>', opts)
 keymap('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', opts)
 

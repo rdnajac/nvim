@@ -54,6 +54,10 @@ spec "plugin.breadcrumbs"    -- Breadcrumb navigation
 spec "plugin.netrw"          -- Built-in file explorer
 spec "plugin.bufdelete"      -- Buffer deletion without closing windows
 
+-- New and untested
+spec "plugin.trouble"
+spec "plugin.text-to-colorscheme"
+
 -- Lazy Loading
 require "plugin._lazy"        -- Handles lazy loading of certain plugins or configurations.
 
