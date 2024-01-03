@@ -58,9 +58,14 @@ keymap('n', '<leader>w', ':<C-u>%s/\\s\\+$//e<CR>:write<CR>', opts)
 keymap('n', '<leader>q', ':wqall<cr>', opts)
 keymap('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', opts)
 
+keymap('n', '<leader>]', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+
 -- Single-line comment with Ctrl-c in insert mode
 keymap('i', '<C-c>', '/*  */<Left><Left><Left>', opts)
 
 -- Multi-line comment with Ctrl-Shift-C in insert mode
 keymap('i', '<C-C>', '<Esc>O * <Esc>O/*<Esc>jo */<Up>', opts)
 
+-- Insert debug print statement
+keymap('n', '<leader>`', "ifprintf(stderr, \"[%s:%d] \\n\", __func__, __LINE__);<ESC>24<Left>i", opts)
+keymap('i', '<leader>`', "fprintf(stderr, \"[%s:%d] \\n\", __func__, __LINE__);<ESC>24<Left>i", opts)
