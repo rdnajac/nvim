@@ -51,6 +51,9 @@ keymap('n', 'L', ':bnext<CR>', opts)
 keymap('n', 'H', ':bprevious<CR>', opts)
 keymap('n', '<leader>bl', ':ls<CR>', opts)
 
+keymap('n', '<leader>v', ':vs<CR>', opts)
+keymap('n', '<leader>sp', ':split<CR>', opts)
+
 -- Easy saving and quitting mappings
 keymap('i', 'jk', '<esc>', opts)
 -- Map <leader>w to trim whitespace and save
@@ -59,6 +62,7 @@ keymap('n', '<leader>q', ':wqall<cr>', opts)
 keymap('n', '<F5>', ':let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>', opts)
 
 keymap('n', '<leader>]', "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap('n', '<leader>[', "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 
 -- Single-line comment with Ctrl-c in insert mode
 keymap('i', '<C-c>', '/*  */<Left><Left><Left>', opts)
@@ -69,3 +73,14 @@ keymap('i', '<C-C>', '<Esc>O * <Esc>O/*<Esc>jo */<Up>', opts)
 -- Insert debug print statement
 keymap('n', '<leader>`', "ifprintf(stderr, \"[%s:%d] \\n\", __func__, __LINE__);<ESC>24<Left>i", opts)
 keymap('i', '<leader>`', "fprintf(stderr, \"[%s:%d] \\n\", __func__, __LINE__);<ESC>24<Left>i", opts)
+
+--keymap('n', '<F2>', ":let &tabstop=&shiftwidth=(&tabstop==4?8:4)|set &expandtab=!&expandtab<CR>", opts)
+keymap('n', '<F2>', function()
+    local new_value = vim.o.tabstop == 4 and 8 or 4
+    vim.o.tabstop = new_value
+    vim.o.shiftwidth = new_value
+    vim.o.expandtab = not vim.o.expandtab
+end, opts)
+
+keymap('n', '<leader>c', ":set cursorline! cursorcolumn! spell!<CR>:execute 'set colorcolumn=' . (&colorcolumn == '' ? '81' :'')<CR>", opts)
+

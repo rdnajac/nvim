@@ -1,13 +1,20 @@
 local M = {
-  "folke/tokyonight.nvim",
-  --"catppuccin/nvim",
-  lazy = false, -- make sure we load this during startup if it is your main colorscheme
-  priority = 1000, -- make sure to load this before all the other start plugins
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,  -- Main color scheme, loaded at startup
+        priority = 1000,
+    },
+    { "catppuccin/nvim", lazy = true },
+    { "rose-pine/neovim", lazy = true },
+    { "rebelot/kanagawa.nvim", lazy = true },
+    { "EdenEast/nightfox.nvim", lazy = true },
+    { "marko-cerovac/material.nvim", lazy = true },
+    -- Add more color schemes in a similar fashion if needed
 }
 
 function M.config()
-  vim.cmd.colorscheme "tokyonight-night"
-  --vim.cmd.colorscheme "catppuccin-mocha"
+    vim.cmd.colorscheme "tokyonight-night"  -- Activate the main color scheme
 end
 
 return M
+
