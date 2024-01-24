@@ -13,9 +13,11 @@ require "autocmds"     -- Defines autocommands for automated tasks.
 
 -- User Interface Enhancements
 spec "plugin.colorscheme"    -- Color scheme customization
-spec "plugin.alpha"          -- Customizable start screen
 spec "plugin.lualine"        -- Status line configuration
+
 spec "plugin.devicons"       -- File icons
+
+spec "plugin.alpha"          -- Customizable start screen
 spec "plugin.indentline"     -- Visual indentation guides
 spec "plugin.diffview"       -- Git diff visualization
 

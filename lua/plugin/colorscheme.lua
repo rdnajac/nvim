@@ -6,11 +6,11 @@ local M = {
 
 function M.config()
     --vim.cmd.colorscheme "tokyonight-night"
-    --vim.cmd.colorscheme "catppuccin-mocha"
+    vim.cmd.colorscheme "catppuccin-mocha"
     --vim.cmd.colorscheme "rose-pine-main"
     --vim.cmd.colorscheme "kanagawa-wave"
     --vim.cmd.colorscheme "nightfox"
-    vim.cmd.colorscheme "material-deep-ocean"
+    --vim.cmd.colorscheme "material-deep-ocean"
 end
 
 -- add additional colorschemes here
