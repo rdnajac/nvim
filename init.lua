@@ -12,10 +12,12 @@ require "autocmds"     -- Defines autocommands for automated tasks.
 -- The '--spec' function is used to specify plugin configurations (???).
 
 -- User Interface Enhancements
---spec "plugin.colorscheme"    -- Color scheme customization
+spec "plugin.colorscheme"    -- Color scheme customization
+spec "plugin.lualine"        -- Status line configuration
+
+spec "plugin.devicons"       -- File icons
+
 --spec "plugin.alpha"          -- Customizable start screen
---spec "plugin.lualine"        -- Status line configuration
---spec "plugin.devicons"       -- File icons
 --spec "plugin.indentline"     -- Visual indentation guides
 --spec "plugin.diffview"       -- Git diff visualization
 
@@ -26,7 +28,7 @@ require "autocmds"     -- Defines autocommands for automated tasks.
 --spec "plugin.project"        -- Project management
 
 -- Coding Completion and Syntax Tools
---spec "plugin.treesitter"     -- Enhanced syntax highlighting and parsing
+spec "plugin.treesitter"     -- Enhanced syntax highlighting and parsing
 --spec "plugin.autopairs"      -- Auto pairing of brackets and quotes
 --spec "plugin.comment"        -- Easy commenting of code blocks
 --spec "plugin.cmp"            -- Completion engine configurations

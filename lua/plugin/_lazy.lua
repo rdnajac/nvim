@@ -23,11 +23,10 @@ vim.opt.rtp:prepend(lazypath)
 -- Set up lazy.nvim with custom configurations.
 require("lazy").setup {
     spec = LAZY_PLUGIN_SPEC,    -- Plugin specification settings.
-    install = { colorscheme = { "tokyonight-night" }, },
+    --install = { colorscheme = { "tokyonight-night" }, },
     ui = { border = "rounded", },
     change_detection = {
         enabled = true,  -- Enable change detection for plugins.
         notify = false,  -- Disable notifications for changes.
     },
 }
-vim.cmd.colorscheme "tokyonight-night"

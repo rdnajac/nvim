@@ -43,7 +43,7 @@ function M.config()
     },
 
     matchup = {
-      enable = { "astro" },
+      enable = { },
       disable = { "lua" },
     },
 
@@ -90,31 +90,6 @@ function M.config()
     },
   }
 
-  -- local configs = require "nvim-treesitter.configs"
-  --
-  -- configs.setup {
-  --   -- modules = {
-  --   --
-  --   --
-  --   --   rainbow = {
-  --   --     enable = false,
-  --   --     query = {
-  --   --       "rainbow-parens",
-  --   --     },
-  --   --     strategy = require("ts-rainbow").strategy.global,
-  --   --     hlgroups = {
-  --   --       -- "TSRainbowRed",
-  --   --       "TSRainbowBlue",
-  --   --       -- "TSRainbowOrange",
-  --   --       -- "TSRainbowCoral",
-  --   --       "TSRainbowPink",
-  --   --       "TSRainbowYellow",
-  --   --       -- "TSRainbowViolet",
-  --   --       -- "TSRainbowGreen",
-  --   --     },
-  --   --   },
-  --   -- },
-  -- }
 end
 
 return M
