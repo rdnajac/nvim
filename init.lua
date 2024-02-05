@@ -59,6 +59,7 @@ spec "plugin.bufdelete"      -- Buffer deletion without closing windows
 -- New and untested
 spec "plugin.trouble"
 spec "plugin.text-to-colorscheme"
+spec "plugin.markdown-preview"
 
 -- Lazy Loading
 require "plugin._lazy"        -- Handles lazy loading of certain plugins or configurations.
