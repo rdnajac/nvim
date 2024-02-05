@@ -16,26 +16,24 @@ spec "plugin.colorscheme"    -- Color scheme customization
 spec "plugin.lualine"        -- Status line configuration
 
 spec "plugin.devicons"       -- File icons
-
 --spec "plugin.alpha"          -- Customizable start screen
 --spec "plugin.indentline"     -- Visual indentation guides
 --spec "plugin.diffview"       -- Git diff visualization
 
 -- File and Project Navigation
---spec "plugin.nvimtree"       -- File explorer
+spec "plugin.nvimtree"       -- File explorer
 --spec "plugin.telescope"      -- Fuzzy finder
 --spec "plugin.telescope-tabs" -- Tab management with Telescope
 --spec "plugin.project"        -- Project management
 
 -- Coding Completion and Syntax Tools
 spec "plugin.treesitter"     -- Enhanced syntax highlighting and parsing
---spec "plugin.autopairs"      -- Auto pairing of brackets and quotes
 --spec "plugin.comment"        -- Easy commenting of code blocks
 --spec "plugin.cmp"            -- Completion engine configurations
 
 -- Git Integration
---spec "plugin.gitsigns"       -- Git integration with editor signs
---spec "plugin.neogit"         -- Enhanced Git experience
+spec "plugin.gitsigns"       -- Git integration with editor signs
+spec "plugin.neogit"         -- Enhanced Git experience
 
 -- Language Server Protocol (LSP) and Development Tools
 --spec "plugin.lspconfig"      -- Language server configurations
@@ -58,7 +56,7 @@ spec "plugin.treesitter"     -- Enhanced syntax highlighting and parsing
 
 -- New and untested
 --spec "plugin.trouble"
---spec "plugin.text-to-colorscheme"
+spec "plugin.markdown-preview"
 
 -- Lazy Loading
 require "plugin._lazy"        -- Handles lazy loading of certain plugins or configurations.
