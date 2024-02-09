@@ -20,7 +20,6 @@ local extra = {
     "marko-cerovac/material.nvim",
 }
 
--- Function to append additional colorschemes
 local function append_colorschemes()
     local schemes = {}
     for _, scheme in ipairs(extra) do

@@ -1,14 +1,8 @@
---- navic.lua
 local M = {
-    "SmiteshP/nvim-navic",
-    commit = "0ffa7ffe6588f3417e680439872f5049e38a24db",
-    -- as far as I know, breadcrumbs is only used by navic
+    "LunarVim/breadcrumbs.nvim",
     dependencies = {
-        {
-            "LunarVim/breadcrumbs.nvim",
-            commit = "1033b354f65206793831207d5c9047fc059e35c3",
-        }
-    }
+        "SmiteshP/nvim-navic",
+    },
 }
 
 function M.config()
@@ -24,7 +18,7 @@ function M.config()
         depth_limit = 0,
         depth_limit_indicator = "..",
     }
+    require("breadcrumbs").setup()
 end
 
 return M
-

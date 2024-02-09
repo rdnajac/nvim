@@ -1,4 +1,3 @@
---- markdown-preview.lua
 local M = {
     "iamcco/markdown-preview.nvim",
     cmd = {
@@ -13,4 +12,3 @@ local M = {
 function M.config() end
 
 return M
-

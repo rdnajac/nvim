@@ -1,9 +1,4 @@
---- Lazy Plugin Loader Configuration
--- This script is responsible for setting up the 'lazy.nvim' plugin loader.
-
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-
--- Install Lazy if not already installed
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system {
         "git",
@@ -26,4 +21,3 @@ require("lazy").setup {
         notify = false,  -- Disable notifications for changes.
     },
 }
-

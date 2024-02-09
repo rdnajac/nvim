@@ -1,4 +1,3 @@
---- diffview.lua
 local M = {
     "sindrets/diffview.nvim",
     event = "VeryLazy",
@@ -14,4 +13,3 @@ local M = {
 function M.config() end
 
 return M
-

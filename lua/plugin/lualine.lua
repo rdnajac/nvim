@@ -1,6 +1,8 @@
 local M = {
     "nvim-lualine/lualine.nvim",
-    commit = "7533b0ead663d80452210c0c089e5105089697e5",
+    dependencies = {
+        --"AndreM222/copilot-lualine",
+    },
 }
 
 function M.config()
@@ -38,7 +40,6 @@ function M.config()
             --section_separators = { left = "", right = "" },
             section_separators = { left = '', right = '' },
             --section_separators = { left = "", right = "" },
-
             ignore_focus = { "NvimTree" },
         },
         sections = {

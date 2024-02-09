@@ -8,7 +8,6 @@ return {
                 "--clang-tidy",
                 "--suggest-missing-includes",
                 "--offset-encoding=utf-8",
-
             },
             filetypes = { "cpp", "hpp" },
             extraArgs = { "-std=c++20" },

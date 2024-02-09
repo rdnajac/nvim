@@ -1,22 +1,22 @@
---- telescope.lua
 local M = {
     "nvim-telescope/telescope.nvim",
-    commit = "74ce793a60759e3db0d265174f137fb627430355",
-    dependencies = {
-        {
-            "nvim-telescope/telescope-fzf-native.nvim",
-            build = "make",
-        },
-        {
-            "LukasPietzschmann/telescope-tabs",
-            commit = "801425bd19d3fb511ef477bf44a1f99b82419a9c",
-        },
-    },
-    lazy = true,
-    cmd = "Telescope",
+    dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },
 }
 
 function M.config()
+    local wk = require "which-key"
+    wk.register {
+        ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
+        ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+        ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+        ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+        ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+        ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+        ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
+        ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
+        ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    }
+
     local icons = require "plugin.icons"
     local actions = require "telescope.actions"
 
@@ -29,10 +29,6 @@ function M.config()
             selection_strategy = "reset",
             path_display = { "smart" },
             color_devicons = true,
-            set_env = { ["COLORTERM"] = "truecolor" },
-            sorting_strategy = nil,
-            layout_strategy = nil,
-            layout_config = {},
             vimgrep_arguments = {
                 "rg",
                 "--color=never",
@@ -93,19 +89,6 @@ function M.config()
             },
         },
     }
-    require("telescope-tabs").setup {
-        entry_formatter = function(tab_id, buffer_ids, file_names, file_paths, is_current)
-            local entry_string = table.concat(file_names, ", ")
-            return string.format("%d: %s%s", tab_id, entry_string, is_current and " " or "")
-        end,
-        entry_ordinal = function(tab_id, buffer_ids, file_names, file_paths, is_current)
-            return table.concat(file_names, " ")
-        end,
-        show_preview = false,
-        close_tab_shortcut_i = "<C-d>", -- if you're in insert mode
-        close_tab_shortcut_n = "dd", -- if you're in normal mode
-    }
-
 end
 
 return M
