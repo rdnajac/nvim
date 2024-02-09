@@ -1,4 +1,3 @@
---- cmp.lua
 local M = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
@@ -38,9 +37,7 @@ local M = {
             "L3MON4D3/LuaSnip",
             event = "InsertEnter",
             commit = "80a8528f084a97b624ae443a6f50ff8074ba486b",
-            dependencies = {
-                "rafamadriz/friendly-snippets",
-            },
+            dependencies = { "rafamadriz/friendly-snippets", },
         },
         {
             "hrsh7th/cmp-nvim-lua",

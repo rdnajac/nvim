@@ -30,4 +30,3 @@ local function append_colorschemes()
 end
 
 return { M, unpack(append_colorschemes()) }
-
