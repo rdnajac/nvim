@@ -7,6 +7,8 @@ local M = {
 function M.config()
     vim.cmd.colorscheme "tokyonight-night"
     --vim.cmd.colorscheme "material-deep-ocean"
+    --vim.cmd.colorscheme "material-deep-ocean"
+    --vim.api.nvim_set_hl(0, 'Normal', { bg = "#000000" })
 end
 
 -- Add additional colorschemes here

@@ -64,7 +64,7 @@ function M.config()
   local servers = {
     "lua_ls",
     "clangd",
-        "ocamllsp",
+    "ocamllsp",
     --"cssls",
     --"timeHMStml",
     --"tsserver",

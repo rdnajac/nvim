@@ -1,9 +1,10 @@
+--- trouble.lua
 local M = {
- "folke/trouble.nvim",
+    "folke/trouble.nvim",
 }
 
 function M.config()
-  require("trouble").setup()
+    require("trouble").setup()
 end
 
 return M

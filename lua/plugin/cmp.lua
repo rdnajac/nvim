@@ -1,3 +1,4 @@
+--- cmp.lua
 local M = {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",

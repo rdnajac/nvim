@@ -1,11 +1,13 @@
+--- clangd.lua
 return {
-  settings = {
-    clangd = {
-        cmd = { "clangd",
+    settings = {
+        clangd = {
+            cmd = {
+                "clangd",
                 "--background-index",
                 "--clang-tidy",
                 "--suggest-missing-includes",
-                "--offset-encoding=utf-16",
+                "--offset-encoding=utf-8",
 
             },
             filetypes = { "cpp", "hpp" },
