@@ -18,7 +18,7 @@ spec "plugin.alpha"          -- Customizable start screen
 spec "plugin.colorscheme"    -- Color scheme customization
 spec "plugin.illuminate"     -- Highlighting of current word usage
 spec "plugin.indentline"     -- Visual indentation guides
-spec "plugin.lualine"        -- Status line configuration 
+spec "plugin.lualine"        -- Status line configuration
 spec "plugin.whichkey"       -- Keybinding assistance
 
 -- QOL
@@ -26,9 +26,9 @@ spec "plugin.bufdelete"      -- Buffer deletion without closing windows
 spec "plugin.comment"        -- Easy commenting of code blocks
 spec "plugin.toggleterm"     -- Terminal integration
 
--- File Explorer 
+-- File Explorer
 spec "plugin.navic"          -- Shows current code context in the tabline with cute little glyphs
-spec "plugin.netrw"          -- Adds little file/folder/symlink icons 
+spec "plugin.netrw"          -- Adds little file/folder/symlink icons
 spec "plugin.nvimtree"       -- File explorer
 spec "plugin.project"        -- Project management
 spec "plugin.telescope"      -- Fuzzy finder
@@ -40,13 +40,15 @@ spec "plugin.cmp"            -- Completion engine configurations
 -- Language Server Protocol (LSP) and Development Tools
 spec "plugin.lspconfig"      -- Language server configurations
 spec "plugin.mason"          -- LSP servers and tools management
-spec "plugin.null-ls"        -- Integration of linters and formatters
+spec "plugin.none-ls"        -- Integration of linters and formatters
 
 -- Utility and Miscellaneous
 spec "plugin.markdown-preview" -- Render md files in browser
 
 -- New and untested
 spec "plugin.trouble"
+-- spec "plugin.harpoon"
+-- spec "plugin.neotest"
 
 -- Lazy Loading
 require "plugin._lazy"        -- Handles lazy loading of certain plugins or configurations.
