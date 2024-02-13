@@ -33,14 +33,13 @@ spec "plugin.nvimtree"       -- File explorer
 spec "plugin.project"        -- Project management
 spec "plugin.telescope"      -- Fuzzy finder
 
--- Coding Completion and Syntax Tools
+-- LSP, Syntax, and Completion
 spec "plugin.treesitter"     -- Enhanced syntax highlighting and parsing
-spec "plugin.cmp"            -- Completion engine configurations
-
--- Language Server Protocol (LSP) and Development Tools
 spec "plugin.lspconfig"      -- Language server configurations
 spec "plugin.mason"          -- LSP servers and tools management
 spec "plugin.none-ls"        -- Integration of linters and formatters
+spec "plugin.cmp"            -- Completion engine configurations
+spec "plugin.copilot"
 
 -- Utility and Miscellaneous
 spec "plugin.markdown-preview" -- Render md files in browser

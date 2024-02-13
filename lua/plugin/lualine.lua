@@ -1,8 +1,6 @@
 local M = {
     "nvim-lualine/lualine.nvim",
-    dependencies = {
-        --"AndreM222/copilot-lualine",
-    },
+    dependencies = { "AndreM222/copilot-lualine", },
 }
 
 function M.config()
@@ -45,7 +43,7 @@ function M.config()
         sections = {
             lualine_a = { "mode" },
             lualine_b = { {"branch", icon =""} , diff },
-            lualine_c = { "diagnostics" },
+            lualine_c = { "diagnostics, copilot" },
             lualine_x = { "filetype", "fileformat", "o:encoding" ,  },
             lualine_z = { "location", "progress" },
             lualine_y = { {displsp, icon = " LSP:"}, },
