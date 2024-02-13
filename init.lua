@@ -27,7 +27,7 @@ spec "plugin.comment"        -- Easy commenting of code blocks
 spec "plugin.toggleterm"     -- Terminal integration
 
 -- File Explorer
-spec "plugin.navic"          -- Shows current code context in the tabline with cute little glyphs
+spec "plugin.breadcrumbs"    -- Shows current code context in the tabline with cute little glyphs
 spec "plugin.netrw"          -- Adds little file/folder/symlink icons
 spec "plugin.nvimtree"       -- File explorer
 spec "plugin.project"        -- Project management

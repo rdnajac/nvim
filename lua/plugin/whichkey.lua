@@ -35,14 +35,15 @@ function M.config()
                 enabled = true,
                 suggestions = 20,
             },
+            -- learn vim!
             presets = {
-                operators = false,
-                motions = false,
-                text_objects = false,
-                windows = false,
-                nav = false,
-                z = false,
-                g = false,
+                operators = true,
+                motions = true,
+                text_objects = true,
+                windows = true,
+                nav = true,
+                z = true,
+                g = true,
             },
         },
         window = {

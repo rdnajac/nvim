@@ -115,6 +115,13 @@ function M.config()
             capabilities = M.common_capabilities(),
         }
 
+        if server == "clangd" then
+            opts.cmd = {
+                "clangd",
+                "--offset-encoding=utf-16",
+            }
+        end
+
         local require_ok, settings = pcall(require, "plugin.lspsettings." .. server)
         if require_ok then
             opts = vim.tbl_deep_extend("force", settings, opts)
@@ -124,8 +131,10 @@ function M.config()
             require("neodev").setup {}
         end
 
+
         lspconfig[server].setup(opts)
     end
 end
+
 
 return M
