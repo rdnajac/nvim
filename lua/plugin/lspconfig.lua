@@ -1,11 +1,7 @@
 local M = {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-        {
-            "folke/neodev.nvim",
-        },
-    },
+    dependencies = { { "folke/neodev.nvim", }, },
 }
 
 local function lsp_keymaps(bufnr)
@@ -67,6 +63,7 @@ function M.config()
 
     local servers = {
         "lua_ls",
+        "vimls",
         "clangd",
         "ocamllsp",
         "marksman",
