@@ -77,5 +77,5 @@ vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
 vim.cmd [[ filetype plugin indent on ]]
 
 -- Ignore these file extensions and folders
-vim.opt.wildignore="*.o,*.out,*~,*.pyc,*.class,*.jar,*.pyo,*.pyd,*.node,*.zip,*.tar.gz,*.rar,*.7z,*.tar.xz,*.tgz,*.log,*.tmp,*.temp,*.swp,*.swo,*.mp3,*.mp4,*.avi,*.mkv,*.mov,*.bmp,*.tiff,*.ico,*.md,*.txt,*.DS_Store,Thumbs.db,*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/bower_components/*,*/vendor/*,*/build/*,*/dist/*,*/out/*,*/bin/*,*/.idea/*,*/.vscode/*,*/__pycache__/*,*/.cache/*,*.jpg,*.png,*.gif,*.pdf,*.exe,*.flv,*.img"
+vim.opt.wildignore="*.o,*.out,*~,*.pyc,*.class,*.jar,*.pyo,*.pyd,*.node,*.zip,*.tar.gz,*.rar,*.7z,*.tar.xz,*.tgz,*.log,*.tmp,*.temp,*.swp,*.swo,*.mp3,*.mp4,*.avi,*.mkv,*.mov,*.bmp,*.tiff,*.ico,*.md,*.txt,*.DS_Store,Thumbs.db,*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/bower_components/*,*/vendor/*,*/build/*,*/dist/*,*/out/*,*/bin/*,*/.idea/*,*/.vscode/*,*/__pycache__/*,*/.cache/*,*.jpg,*.png,*.gif,*.pdf,*.exe,*.flv,*.img,*.cm*"
 
