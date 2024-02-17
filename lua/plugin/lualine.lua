@@ -43,7 +43,7 @@ function M.config()
         sections = {
             lualine_a = { "mode" },
             lualine_b = { {"branch", icon =""} , diff },
-            lualine_c = { "diagnostics, copilot" },
+            lualine_c = { "copilot", "diagnostics" },
             lualine_x = { "filetype", "fileformat", "o:encoding" ,  },
             lualine_z = { "location", "progress" },
             lualine_y = { {displsp, icon = " LSP:"}, },
