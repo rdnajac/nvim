@@ -20,9 +20,7 @@ function M.config()
             enabled = true,
             auto_trigger = true,
             keymap = {
-                -- change these when not on mac
-                -- accept = "<D-\\>",
-                accept = "<leader><cr>",
+                accept = "<D-l>",
                 next = "<D-j>",
                 prev = "<D-k>",
                 dismiss = "<D-h>",

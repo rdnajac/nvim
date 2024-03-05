@@ -72,7 +72,6 @@ keymap('i', '<C-C>', '<Esc>O * <Esc>O/*<Esc>jo */<Up>', opts)
 
 -- Insert debug print statement
 keymap('n', '<leader>`', "ifprintf(stderr, \"[%s:%d] \\n\", __func__, __LINE__);<ESC>24<Left>i", opts)
-keymap('i', '<leader>`', "fprintf(stderr, \"[%s:%d] \\n\", __func__, __LINE__);<ESC>24<Left>i", opts)
 
 --keymap('n', '<F2>', ":let &tabstop=&shiftwidth=(&tabstop==4?8:4)|set &expandtab=!&expandtab<CR>", opts)
 keymap('n', '<F2>', function()
