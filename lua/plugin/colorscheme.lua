@@ -6,13 +6,7 @@ local M = {
 
 function M.config()
     --vim.cmd.colorscheme "material-deep-ocean"
-    vim.cmd.colorscheme "oxocarbon"
-    vim.api.nvim_set_hl(0, 'Normal', { fg = "#39ff14", bg = "none" })
-    -- make the gutter none 
-    vim.api.nvim_set_hl(0, 'SignColumn', { bg = "none" })
-    -- make the numbers background none
-    vim.api.nvim_set_hl(0, 'LineNr', { bg = "none" })
-    --vim.cmd.colorscheme "tokyonight-night"
+    vim.cmd.colorscheme "tokyonight-night"
 end
 
 -- Add additional colorschemes here

@@ -67,9 +67,9 @@ function M.config()
         "clangd",
         "ocamllsp",
         "marksman",
-        "pyright",
         "bashls",
         "yamlls",
+        "pylsp",
     }
 
     local default_diagnostic_config = {
@@ -116,6 +116,25 @@ function M.config()
             opts.cmd = {
                 "clangd",
                 "--offset-encoding=utf-16",
+            }
+        end
+
+        if server == "pylsp" then
+            opts.settings = {
+                pylsp = {
+                    plugins = {
+                        flake8 = {
+                            enabled = true,
+                            maxLineLength = 88,
+                            ignore = { "E501" },
+                        },
+                        Black = { enabled = true },
+                        pycodestyle = { enabled = false },
+                        pyflakes = { enabled = false },
+                        yapf = { enabled = false },
+                        isort = { enabled = false },
+                    },
+                },
             }
         end
 

@@ -83,3 +83,5 @@ end, opts)
 
 keymap('n', '<leader>c', ":set cursorline! cursorcolumn! spell!<CR>:execute 'set colorcolumn=' . (&colorcolumn == '' ? '81' :'')<CR>", opts)
 
+--lua keymap to make taping shift twice toggle the letter case in normal mode:
+keymap('n', '<leader><leader>', "<cmd>lua require('utils').toggle_case()<CR>", opts)

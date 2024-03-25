@@ -6,16 +6,17 @@ local M = {
 
 function M.config()
     require("nvim-treesitter.configs").setup {
+        auto_install = true,
+        modules = {},
         ensure_installed = {
-            "lua", "vim",
-            "markdown",
-            "markdown_inline",
+            "lua",
+            "vim",
+            "c",
+            "cpp",
             "bash",
             "python",
-            "c", "cpp", "cmake",
+            "markdown",
             "ocaml",
-            --require('tree-sitter-ocaml').ocaml;
-            --require('tree-sitter-ocaml').interface;
         },
         ignore_install = { "" },
         sync_install = false,

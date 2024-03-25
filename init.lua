@@ -46,6 +46,7 @@ spec "plugin.markdown-preview" -- Render md files in browser
 
 -- New and untested
 spec "plugin.trouble"
+
 -- spec "plugin.harpoon"
 -- spec "plugin.neotest"
 
