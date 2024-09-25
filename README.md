@@ -1,7 +1,4 @@
-# nvim config
+# 💤 LazyVim
 
-## branches
-
-- main
-- lazy
-- lsp-zero
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
