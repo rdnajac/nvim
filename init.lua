@@ -1,7 +1,7 @@
 vim.cmd("source ~/.vim/vimrc")
 
+-- Configure lazy.nvim plugin manager {{{
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
 -- Auto-install lazy.nvim if not present
 if not vim.uv.fs_stat(lazypath) then
 	print("Installing lazy.nvim....")
@@ -15,26 +15,38 @@ if not vim.uv.fs_stat(lazypath) then
 	})
 	print("Done.")
 end
-
--- Add lazy.nvim to runtimepath
 vim.opt.rtp:prepend(lazypath)
+-- }}} 
 
 -- Forget lazy loading and just load everything
 require("lazy").setup({
-	{ "folke/tokyonight.nvim" },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		config = function()
+			vim.cmd([[colorscheme tokyonight-night]])
+		end,
+	},
 	{ "VonHeikemen/lsp-zero.nvim", branch = "v4.x" },
 	{ "williamboman/mason.nvim" },
 	{ "williamboman/mason-lspconfig.nvim" },
 	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/nvim-cmp" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-buffer" },
-	{ "hrsh7th/cmp-path" },
-	{ "zbirenbaum/copilot.lua" },
-	{ "zbirenbaum/copilot-cmp" },
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"zbirenbaum/copilot-cmp",
+			"zbirenbaum/copilot.lua",
+		},
+	},
+	-- if some code requires a module from an unloaded plugin, it will be automatically loaded.
+	-- So for api plugins like devicons, we can always set lazy=true
+	{ "nvim-tree/nvim-web-devicons", lazy = true },
 })
-
-vim.cmd("colorscheme tokyonight-night")
 
 -- LSP setup
 local lsp_zero = require("lsp-zero")
@@ -104,6 +116,3 @@ cmp.setup({
 	}),
 	formatting = lsp_zero.cmp_format({ details = true }),
 })
-
--- # TODO add pcall
--- # add requires for colors
