@@ -25,13 +25,6 @@ require("lazy").setup({
 	ui = { border = "rounded" },
 })
 
-local function safeRequire(module)
-	local success, loadedModule = pcall(require, module)
-	if success then
-		return loadedModule
-	end
-	vim.cmd.echo("Error loading " .. module)
-end
 
-safeRequire("autocmds")
-safeRequire("colors")
+require "autocmds"
+require "colors"
