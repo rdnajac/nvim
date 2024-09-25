@@ -1,5 +1,5 @@
 vim.cmd("source ~/.vim/vimrc")
-require("_lazy")
-require("autocmds")
-require("colors")
+require("config.autocmds")
+require("config.lazy")
+require("config.colors")
 
