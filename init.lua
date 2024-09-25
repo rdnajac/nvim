@@ -1,7 +1,7 @@
--- Source the Vim configuration file
 vim.cmd("source ~/.vim/vimrc")
+require("autocmds")
 
--- Bootstrap lazy.nvim
+-- bootstrap lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -17,14 +17,4 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
-
--- Set up lazy.nvim
-require("lazy").setup({
-	spec = { import = "plugins" },
-	install = { colorscheme = { "tokyonight-night" } },
-	ui = { border = "rounded" },
-})
-
-
-require "autocmds"
-require "colors"
+require("lazy").setup({ import = "plugins" })
