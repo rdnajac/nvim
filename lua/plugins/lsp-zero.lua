@@ -15,7 +15,6 @@ return {
     lazy = false,
     config = false,
   },
-
   {
     "neovim/nvim-lspconfig",
     cmd = { "LspInfo", "LspInstall", "LspStart" },
@@ -24,6 +23,7 @@ return {
       { "hrsh7th/cmp-nvim-lsp" },
       { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
+      { "WhoIsSethDaniel/mason-tool-installer.nvim" },
     },
     config = function()
       local lsp_zero = require("lsp-zero")
@@ -50,23 +50,8 @@ return {
           end,
           clangd = function()
             require("lspconfig").clangd.setup({
-              cmd = {
-                "clangd",
-                "--background-index",
-                "--clang-tidy",
-                "--suggest-missing-includes",
-                "--offset-encoding=utf-8",
-              },
               filetypes = { "c", "cpp", "objc", "objcpp" },
-              on_attach = function(client, bufnr)
-                lsp_attach(client, bufnr)
-                if vim.bo[bufnr].filetype == "cpp" then
-                  client.config.settings = client.config.settings or {}
-                  client.config.settings.clangd = client.config.settings.clangd or {}
-                  client.config.settings.clangd.extraArgs = { "-std=c++14" }
-                  client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-                end
-              end,
+              on_attach = lsp_attach,
             })
           end,
           pyright = function()
@@ -77,3 +62,10 @@ return {
     end,
   },
 }
+{
+    -- require('mason-tool-installer').setup {
+    --   ensure_installed = {
+    --     "cpplint",
+    --   }
+    -- }
+-- },

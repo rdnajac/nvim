@@ -7,8 +7,8 @@ return {
 
       lint.linters_by_ft = {
         sh = { "shellcheck" },
-        c = { "clangd" },
-        cpp = { "clangd" },
+        -- c = { "cpplint" },
+        cpp = { "cpplint" },
       }
 
       vim.api.nvim_create_autocmd({ "BufWritePost", "BufReadPost", "InsertLeave" }, {
