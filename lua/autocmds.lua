@@ -1,8 +1,3 @@
--- source files from  ~/.vim/plugin/autocmds/*.vim
--- for _, file in ipairs(vim.fn.globpath('~/.vim/plugin/autocmds', '*.vim', false, true)) do
---   vim.cmd('source ' .. file)
--- end
-
 local au = vim.api.nvim_create_autocmd
 
 -- Automatically adjust window sizes after resizing the Vim window
@@ -34,3 +29,4 @@ au('FileType', {
     vim.cmd('colorscheme tokyonight')
   end,
 })
+print('autocmds.lua loaded')

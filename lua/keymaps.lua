@@ -1,5 +1,3 @@
-vim.cmd('source ~/.vim/plugin/settings/keymaps.vim')
-
 local map = vim.keymap.set
 -- map localleader and hi to a message
 map('n', '<localleader>hi', "<cmd>echo 'Hello'<cr>", { noremap = true })
