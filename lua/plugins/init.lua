@@ -15,10 +15,3 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
--- local plugins = require('plugins')
-local plugins = { { 'folke/tokyonight.nvim' } }
-local config = require('config.lazy')
-
-require('lazy').setup(plugins, config)
-vim.cmd('colorscheme tokyonight-night')

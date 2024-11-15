@@ -13,3 +13,10 @@ safe_require('options')
 safe_require('keymaps')
 safe_require('autocmds')
 safe_require('plugins')
+
+-- local plugins = require('plugins')
+local plugins = { { 'folke/tokyonight.nvim' } }
+local config = require('config.lazy')
+
+require('lazy').setup(plugins, config)
+vim.cmd('colorscheme tokyonight-night')
