@@ -5,9 +5,11 @@ local function safe_require(module)
     vim.notify('Error loading module: ' .. module, vim.log.levels.ERROR)
     return nil
   end
+  print('Loaded module: ' .. module)
   return result
 end
 
 safe_require('options')
 safe_require('keymaps')
 safe_require('autocmds')
+safe_require('plugins')
