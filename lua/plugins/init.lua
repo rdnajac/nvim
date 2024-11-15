@@ -1,4 +1,24 @@
 --- plugins/init.lua
 --- require('plugins') loads this file
 
---- bootstrap plugin manager
+-- Bootstrap plugins & lazy.nvim
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable',
+    lazypath,
+  })
+end
+
+vim.opt.rtp:prepend(lazypath)
+
+-- local plugins = require('plugins')
+local plugins = { { 'folke/tokyonight.nvim' } }
+local config = require('config.lazy')
+
+require('lazy').setup(plugins, config)
+vim.cmd('colorscheme tokyonight-night')
