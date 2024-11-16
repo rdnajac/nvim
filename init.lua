@@ -5,26 +5,30 @@ vim.g.maplocalleader = '\\'
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  err('Lazy.nvim not found. Installing...')
+  print('Lazy.nvim not found. Installing...')
   local bootstrap_script = vim.fn.system('curl -s https://raw.githubusercontent.com/folke/lazy.nvim/main/bootstrap.lua')
   loadstring(bootstrap_script)()
 end
 
--- Set up lazy.nvim and configure plugins
 vim.opt.rtp:prepend(lazypath)
+
+-- Set up lazy.nvim and configure plugins
 require('lazy').setup({
-  spec = { import = 'plugins' },
-  local_spec = false,
-  lockfile = vim.fn.stdpath('config') .. '/lazy-lock.json', -- lockfile generated after running update.
-  pkg = { enabled = false, },  -- see: `pkg.json`
-  dev = {
-    path =  '~' ,
-    patterns = { '.vim', '.vim/.plugged/tpope', },
-    fallback = true, -- fallback to git when local plugin doesn't exist
+  spec = {
+    { 'folke/tokyonight.nvim' },
+    { 'VonHeikemen/lsp-zero.nvim' },
+    { 'neovim/nvim-lspconfig' },
+    { 'hrsh7th/nvim-cmp'},
+    { 'hrsh7th/cmp-nvim-lsp'},
+    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason-lspconfig.nvim' },
   },
+  local_spec = false,
+  lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json', -- lockfile generated after running update.
+  pkg = { enabled = false, },  -- see: `pkg.json`
   install = {
     missing = true,
-    colorscheme = { 'tokyonight-night' },
+    -- colorscheme = { 'tokyonight-night' },
   },
   ui = {
     wrap = false,
@@ -54,7 +58,7 @@ require('lazy').setup({
     rtp = {
       disabled_plugins = {
         'gzip',
-        "matchit",
+        -- "matchit",
         -- "matchparen",
         -- "netrwPlugin",
         'tarPlugin',
@@ -66,3 +70,4 @@ require('lazy').setup({
   },
 })
 vim.cmd('colorscheme tokyonight')
+require('lsp')
