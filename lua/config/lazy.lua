@@ -4,6 +4,7 @@ return {
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false }, -- see: `pkg.json`
+  rocks = { enabled = false },
   install = { missing = true, colorscheme = { 'tokyonight' } },
   ui = {
     wrap = false,

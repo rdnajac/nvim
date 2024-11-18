@@ -1,4 +1,4 @@
 return {
   { dir = '~/.vim' },
-  { dir = '~/.vim/.plugged/tabular' },
+  -- { dir = '~/.vim/.plugged/tabular' },
 }
