@@ -3,8 +3,8 @@ return {
   -- spec = LAZY_PLUGIN_SPEC,
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
-  pkg = { enabled = false, },  -- see: `pkg.json`
-  install = { missing = true, colorscheme = { 'tokyonight' }, },
+  pkg = { enabled = false }, -- see: `pkg.json`
+  install = { missing = true, colorscheme = { 'tokyonight' } },
   ui = {
     wrap = false,
     border = 'rounded',
