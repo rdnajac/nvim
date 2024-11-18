@@ -11,6 +11,6 @@ else
 end
 
 -- Set up lazy.nvim and configure plugins
-require('lazy').setup(require('config.lazy'))
+require('lazy').setup('plugins', require('config.lazy'))
 
 vim.cmd('colorscheme tokyonight')
