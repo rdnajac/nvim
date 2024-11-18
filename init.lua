@@ -18,7 +18,7 @@ function spec(item)
 end
 
 -- Set up lazy.nvim and configure plugins
-spec('folke/tokyonight.nvim')
+require('lazy').setup('plugins', require('config.lazy'))
 
 require('lazy').setup(LAZY_PLUGIN_SPEC, require('config.lazy'))
 

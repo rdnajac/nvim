@@ -1,4 +1,7 @@
 return {
+  { dir = '~/.vim' },
+  { dir = '~/.vim/.plugged/tabular' },
+  { 'folke/tokyonight.nvim' },
   { 'neovim/nvim-lspconfig' },
   { 'VonHeikemen/lsp-zero.nvim', opts = {} },
   { 'williamboman/mason.nvim', opts = {} },
