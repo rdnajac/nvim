@@ -1,5 +1,11 @@
 local au = vim.api.nvim_create_autocmd
 
+au('LspAttach', {
+  callback = function(event)
+    lsp_zero.default_keymaps({ buffer = event.buf })
+  end,
+})
+
 -- Automatically adjust window sizes after resizing the Vim window
 au('VimResized', {
   callback = function()
