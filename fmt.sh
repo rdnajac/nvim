@@ -1,3 +1,3 @@
 #!/bin/bash
 ## formats all **/*.lua files
-stylua -v **/*.lua
+stylua -v init.lua ./lua/
