@@ -1,8 +1,15 @@
 return {
   { dir = '~/.vim' },
   { 'folke/tokyonight.nvim' },
-  { 'neovim/nvim-lspconfig' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'VonHeikemen/lsp-zero.nvim' },
+  { 'VonHeikemeVn/lsp-zero.nvim' },
+  { 'williamboman/mason.nvim', lazy = false, opts = {} },
+  {
+    'neovim/nvim-lspconfig',
+    cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
+    event = { 'BufReadPre', 'BufNewFile' },
+    dependencies = {
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+    },
+  },
 }
