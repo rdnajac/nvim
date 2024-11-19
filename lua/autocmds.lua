@@ -21,12 +21,3 @@ au('TextYankPost', {
     vim.highlight.on_yank({ higroup = 'Visual', timeout = 40 })
   end,
 })
-
--- Automatically use the tokyonight colorscheme for Lua files
-au('FileType', {
-  pattern = 'lua',
-  callback = function()
-    vim.cmd('colorscheme tokyonight')
-  end,
-})
-print('autocmds.lua loaded')
