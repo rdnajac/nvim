@@ -9,21 +9,7 @@ return {
   ui = {
     wrap = false,
     border = 'rounded',
-    icons = {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤',
-    },
+    icons = require('config.icons').lazy,
   },
   performance = {
     rtp = {
