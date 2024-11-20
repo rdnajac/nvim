@@ -12,19 +12,4 @@ lsp.extend_lspconfig({
   -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
-require('mason-lspconfig').setup({
-  ensure_installed = {
-    'lua_ls',
-  },
-  handlers = {
-    -- default handler
-    function(server_name)
-      require('lspconfig')[server_name].setup({})
-    end,
-    -- custom handler
-    ['lua_ls'] = function()
-      local lua_opts = lsp.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
-    end,
-  },
-})
+require('lspconfig').lua_ls.setup({})
