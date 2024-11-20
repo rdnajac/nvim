@@ -1,7 +1,7 @@
 local lsp = require('lsp-zero')
 
 local lsp_attach = function(client, bufnr)
-  -- print('Attaching: ' .. client.name)
+  print('Attaching: ' .. client.name)
   lsp.default_keymaps({ buffer = bufnr })
 end
 
@@ -12,8 +12,10 @@ lsp.extend_lspconfig({
   -- capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
-require('mason').setup({})
 require('mason-lspconfig').setup({
+  ensure_installed = {
+    'lua_ls',
+  },
   handlers = {
     -- default handler
     function(server_name)
