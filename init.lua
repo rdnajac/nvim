@@ -1,8 +1,8 @@
--- init.lua
+--- init.lua
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 
-require('config.lazy')
-vim.cmd('colorscheme tokyonight-night')
+local plugins = require('plugins')
+require('config.lazy').setup({ plugins })
 require('config.cmp')
 require('config.lsp')
