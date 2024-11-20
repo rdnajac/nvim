@@ -3,6 +3,7 @@ return {
   { 'folke/tokyonight.nvim' },
   { 'VonHeikemeVn/lsp-zero.nvim' },
   { 'williamboman/mason.nvim', lazy = false, opts = {} },
+  { 'williamboman/mason-lspconfig.nvim' },
   {
     'neovim/nvim-lspconfig',
     cmd = { 'LspInfo', 'LspInstall', 'LspStart' },

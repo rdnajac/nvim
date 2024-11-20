@@ -1,5 +1,5 @@
 return {
-  diag = {
+  lsp = {
     error = '🔥',
     warn = '💩',
     hint = '👾',

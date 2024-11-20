@@ -14,5 +14,5 @@ end
 require('lazy').setup('plugins', require('config.lazy'))
 
 vim.cmd('colorscheme tokyonight-night')
+-- require('config.cmp')
 require('config.lsp')
-require('config.cmp')
