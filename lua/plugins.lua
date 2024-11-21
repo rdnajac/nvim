@@ -19,6 +19,7 @@ return {
     dependencies = {
       { 'VonHeikemen/lsp-zero.nvim' },
       { 'williamboman/mason.nvim', opts = {} },
+      { 'williamboman/mason-lspconfig.nvim' },
       {
         'WhoIsSethDaniel/mason-tool-installer.nvim',
         opts = {
@@ -35,6 +36,7 @@ return {
           { 'hrsh7th/cmp-cmdline' },
           { 'hrsh7th/cmp-nvim-lsp' },
           { 'hrsh7th/cmp-path' },
+          { 'andersevenrud/cmp-tmux' },
         },
       },
     },
