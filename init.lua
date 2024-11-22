@@ -14,6 +14,14 @@ LAZY_SPEC = {
   { dir = '~/.vim/plugin/config' },
   { 'folke/tokyonight.nvim' },
   {
+    'nvim-tree/nvim-tree.lua',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    opts = {},
+    keys = { { '<leader>e', '<cmd>NvimTreeToggle<CR>' } },
+  },
+  {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
@@ -73,7 +81,7 @@ require('lazy').setup({
         'gzip',
         -- 'matchit',
         -- 'matchparen',
-        -- 'netrwPlugin',
+        'netrwPlugin',
         'tarPlugin',
         'tohtml',
         'tutor',
