@@ -8,7 +8,7 @@ end
 lsp.extend_lspconfig({
   lsp_attach = lsp_attach,
   float_border = 'rounded',
-  sign_text = require('config.icons').lsp,
+  sign_text = require('user.icons').lsp,
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 

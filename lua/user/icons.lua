@@ -1,4 +1,10 @@
 return {
+  cmp = {
+    nvim_lsp = '🌐',
+    buffer = '📝',
+    path = '💽',
+    tmux = '💻',
+  },
   lsp = {
     error = '🔥',
     warn = '💩',
