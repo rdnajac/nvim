@@ -1,9 +1,10 @@
 return {
   cmp = {
-    nvim_lsp = '🌐',
+    nvim_lsp = '👾',
     buffer = '📝',
     path = '💽',
     tmux = '💻',
+    copilot = '🚀',
   },
   lsp = {
     error = '🔥',

@@ -9,7 +9,12 @@ end
 
 require('lazy').setup({
   spec = {
-    { dir = '~/.vim/plugin/config' },
+    {
+      dir = '~/.vim/plugin/config',
+      config = function()
+        vim.cmd([[colorscheme tokyonight]])
+      end,
+    },
     { 'folke/tokyonight.nvim' },
     { import = 'plugins' },
   },
@@ -38,5 +43,3 @@ require('lazy').setup({
     },
   },
 })
-
-vim.cmd([[ colorscheme tokyonight-night ]])

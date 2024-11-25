@@ -4,4 +4,3 @@ vim.g.maplocalleader = '\\'
 
 require('user.lazy')
 require('user.cmp')
-require('user.lsp')
