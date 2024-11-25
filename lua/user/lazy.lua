@@ -16,6 +16,7 @@ require('lazy').setup({
       end,
     },
     { 'folke/tokyonight.nvim' },
+    { 'stevearc/oil.nvim' },
     { import = 'plugins' },
   },
   local_spec = false,
