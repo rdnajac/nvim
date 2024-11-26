@@ -6,7 +6,6 @@ return {
     'hrsh7th/cmp-buffer',
     -- 'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-path',
-    'andersevenrud/cmp-tmux',
     { 'zbirenbaum/copilot-cmp', opts = {} },
   },
   opts = {
@@ -29,7 +28,6 @@ return {
       { name = 'nvim_lsp' },
       { name = 'buffer' },
       { name = 'path' },
-      { name = 'tmux' },
     }, -- end sources
   },
 }

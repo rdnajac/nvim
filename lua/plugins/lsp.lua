@@ -1,4 +1,5 @@
 return {
+  -- lsp config
   {
     'neovim/nvim-lspconfig',
     cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
@@ -22,6 +23,7 @@ return {
           })
         end,
       },
+      -- install language servers and tools
       { 'williamboman/mason.nvim', cmd = 'Mason', lazy = false, opts = {} },
       {
         'williamboman/mason-lspconfig.nvim',
