@@ -10,13 +10,6 @@ end
 require('lazy').setup({
   spec = {
     { dir = '~/.vim/plugin/config' },
-    {
-      'folke/tokyonight.nvim',
-      config = function()
-        vim.cmd([[colorscheme tokyonight]])
-      end,
-    },
-    { 'stevearc/oil.nvim' },
     { import = 'plugins' },
   },
   local_spec = false,
