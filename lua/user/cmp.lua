@@ -7,7 +7,7 @@ cmp.setup({
   },
 
   -- preselect = 'item',
-  completion = { completeopt = 'menu,menuone,noinsert' },
+  completion = { completeopt = 'menu,menuone' },
 
   mapping = cmp.mapping.preset.insert({
     ['<C-]>'] = cmp.mapping.scroll_docs(-4),
@@ -46,7 +46,6 @@ cmp.setup.filetype('lua', {
     { name = 'nvim_lsp' },
     { name = 'buffer' },
     { name = 'path' },
-    { name = 'tmux' },
     { name = 'lazydev' },
   }),
 })

@@ -1,4 +1,3 @@
---- lua/config/lazy.lua
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -8,10 +7,7 @@ else
 end
 
 require('lazy').setup({
-  spec = {
-    { dir = '~/.vim/plugin/config' },
-    { import = 'plugins' },
-  },
+  spec = LAZY_SPEC,
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false },
