@@ -8,11 +8,9 @@ cmp.setup({
   },
 
   -- preselect = 'item',
-  completion = { completeopt = 'menu,menuone' },
+  -- completion = { completeopt = 'menu,menuone' },
 
   mapping = cmp.mapping.preset.insert({
-    ['<C-]>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-[>'] = cmp.mapping.scroll_docs(4),
     ['<Space>'] = cmp.mapping({
       i = function(fallback)
         if cmp.visible() and cmp.get_active_entry() then
@@ -38,6 +36,8 @@ cmp.setup({
   }),
 
   ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = 'select' }),
+  ['<C-]>'] = cmp.mapping.scroll_docs(-4),
+  ['<C-[>'] = cmp.mapping.scroll_docs(4),
 })
 
 -- Add 'lazydev' source for Lua files only
