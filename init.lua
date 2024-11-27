@@ -1,15 +1,13 @@
 --- init.lua
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
+require('user.autocmds')
+require('user.keymaps')
 
 LAZY_SPEC = {
-  { dir = '~/.vim/plugin/config' },
+  { dir = '~/.vim/' },
   { import = 'plugins' },
 }
 
-require('user.lazy')
+require('user.bootstrap')
 require('user.cmp')
-require('user.autocmds')
-require('user.keymaps')
 
 vim.cmd('set undofile') -- persistent undo

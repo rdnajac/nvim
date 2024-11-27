@@ -1,11 +1,7 @@
-local map = vim.keymap.set
--- map localleader and hi to a message
-map('n', '<localleader>hi', "<cmd>echo 'Hello'<cr>", { noremap = true })
--- -- comment.nvim
--- map("n", "<localleader>/", "gcc", { remap = true })
--- map("v", "<localleader>/", "gc", { remap = true })
+--- user/keymaps.lua
+vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 
--- -- format
--- map("n", "<leader>fm", function()
---   require("conform").format()
--- end)
+local map = vim.keymap.set
+
+map('n', '<localleader>hi', "<cmd>echo 'hi =)'<cr>", { noremap = true })

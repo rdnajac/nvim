@@ -1,3 +1,4 @@
+--- user/autocmds.lua
 local au = vim.api.nvim_create_autocmd
 
 -- Automatically adjust window sizes after resizing the Vim window

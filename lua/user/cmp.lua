@@ -1,3 +1,4 @@
+--- user/cmp.lua
 local cmp = require('cmp')
 
 cmp.setup({
