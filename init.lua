@@ -5,14 +5,7 @@ require('user.keymaps')
 LAZY_SPEC = {
   { dir = '~/.vim/' },
   { import = 'plugins' },
-  { 'tpope/vim-surround', },
-  {
-    'folke/tokyonight.nvim',
-    priority = 1000,
-    init = function()
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
+  { 'tpope/vim-surround' },
   {
     'stevearc/oil.nvim',
     lazy = true,
