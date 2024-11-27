@@ -20,6 +20,7 @@ LAZY_SPEC = {
 }
 
 require('user.bootstrap')
+require('user.lsp')
 require('user.cmp')
 
 vim.cmd('set undofile') -- persistent undo
