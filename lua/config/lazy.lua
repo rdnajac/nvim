@@ -1,4 +1,3 @@
---- user/bootstrap.lua
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -8,7 +7,7 @@ else
 end
 
 require('lazy').setup({
-  spec = LAZY_SPEC,
+  spec = { { import = 'plugins' } },
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false },
@@ -34,3 +33,4 @@ require('lazy').setup({
     },
   },
 })
+-- vim.cmd('colorscheme tokyonight')
