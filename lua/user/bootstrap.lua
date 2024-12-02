@@ -8,7 +8,12 @@ else
 end
 
 require('lazy').setup({
-  spec = LAZY_SPEC,
+  spec = {
+    -- add LazyVim and import its plugins
+    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
+    -- import/override with your plugins
+    { import = 'plugins' },
+  },
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false },
