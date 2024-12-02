@@ -1,3 +1,3 @@
-return { 
-  dir = '~/.vim/'
+return {
+  dir = '~/.vim/',
 }

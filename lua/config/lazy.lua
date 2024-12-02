@@ -8,8 +8,11 @@ end
 
 require('lazy').setup({
   spec = {
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    { import = "plugins" },
+    { dir = '~/.vim/' },
+    -- add LazyVim and import its plugins
+    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
+    -- import/override with your plugins
+    { import = 'plugins' },
   },
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
@@ -36,4 +39,4 @@ require('lazy').setup({
     },
   },
 })
-vim.cmd('colorscheme tokyonight')
+-- vim.cmd('colorscheme tokyonight')
