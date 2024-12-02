@@ -7,7 +7,7 @@ else
 end
 
 require('lazy').setup({
-  spec = { { import = 'plugins' } },
+  spec = LAZY_SPEC,
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false },
