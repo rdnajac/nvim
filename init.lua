@@ -1,6 +1,6 @@
 --- init.lua
 LAZY_SPEC = {
-  -- { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
+  { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
   { import = 'plugins' },
 }
 
