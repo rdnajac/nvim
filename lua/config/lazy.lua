@@ -8,8 +8,8 @@ end
 
 require('lazy').setup({
   spec = {
-    { dir = '~/.vim' },
-    { 'folke/tokyonight.nvim' },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { import = "plugins" },
   },
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
