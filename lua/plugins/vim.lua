@@ -1,4 +1,4 @@
+--- lua/plugins/vim.lua
 return {
   { dir = '~/.vim/' },
-  -- { 'tpope/vim-surround' },
 }

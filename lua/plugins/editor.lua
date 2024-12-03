@@ -1,3 +1,4 @@
+--- lua/plugin/editor.lua
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
@@ -10,6 +11,9 @@ return {
   },
   {
     'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {},
     keys = {
       { '<leader>h', false },
       {

@@ -1,3 +1,4 @@
+--- lua/plugins/oil.lua
 return {
   'stevearc/oil.nvim',
   lazy = true,
@@ -5,7 +6,7 @@ return {
   opts = {},
   keys = {
     { '-', '<CMD>Oil<CR>' },
-    { '<leader>e  ', '<CMD>Oil --left<CR>' },
+    -- { '<leader>e  ', '<CMD>Oil --left<CR>' },
     { '<leader>o', '<CMD>Oil --float<CR>' },
   },
 }
