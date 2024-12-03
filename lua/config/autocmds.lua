@@ -3,6 +3,6 @@ local au = vim.api.nvim_create_autocmd
 
 au('VimEnter', {
   callback = function()
-    vim.cmd [[echom '>^.^<']]
+    vim.cmd([[echom '>^.^<']])
   end,
 })
