@@ -1,3 +1,1 @@
 --- config/options.lua
--- vim.cmd('set undofile') -- persistent undo
--- vim.opt.completeopt = 'menu,menuone'
