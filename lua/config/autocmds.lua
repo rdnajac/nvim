@@ -6,3 +6,5 @@ au('VimEnter', {
     vim.cmd([[echom '>^.^<']])
   end,
 })
+
+vim.cmd([[source ~/.vim/plugin/autocmds/filetypes.vim]])
