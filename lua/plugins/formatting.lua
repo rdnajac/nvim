@@ -1,3 +1,4 @@
+--- lua/plugin/formatting.lua
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },

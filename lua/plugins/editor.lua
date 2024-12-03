@@ -1,3 +1,4 @@
+--- lua/plugin/editor.lua
 return {
   {
     'nvim-neo-tree/neo-tree.nvim',
