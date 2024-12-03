@@ -6,6 +6,5 @@ return {
     init = function()
       vim.cmd([[colorscheme tokyonight]])
     end,
-    { 'catppuccin/nvim', enabled = false },
   },
 }
