@@ -10,6 +10,6 @@ return {
   -- ui
   { 'lukas-reineke/indent-blankline.nvim', enabled = false },
   { 'folke/noice.nvim', enabled = false },
-  { 'stevearc/dressing.nvim', enabled = false },
+  -- { 'stevearc/dressing.nvim', enabled = false },
   { 'MunifTanjim/nui.nvim', enabled = false },
 }
