@@ -1,5 +1,7 @@
 --- init.lua
 require('user.options')
+require('user.autocmds')
+require('user.commands')
 
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
@@ -11,33 +13,31 @@ end
 
 require('lazy').setup({
   spec = {
-    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
-    { import = 'lazyvim.plugins.extras.ai.copilot' },
-    { import = 'lazyvim.plugins.extras.coding.mini-comment' },
-    { import = 'lazyvim.plugins.extras.coding.mini-surround' },
-    { import = 'lazyvim.plugins.extras.editor.mini-files' },
-    -- { import = 'lazyvim.plugins.extras.editor.mini-move' },
-    -- { import = 'lazyvim.plugins.extras.formatting.prettier' })
-    -- { import = 'lazyvim.plugins.extras.lang.clangd' },
-    -- { import = 'lazyvim.plugins.extras.lang.cmake' },
-    -- { import = 'lazyvim.plugins.extras.lang.docker' },
-    -- { import = 'lazyvim.plugins.extras.lang.git' },
-    -- { import = 'lazyvim.plugins.extras.lang.markdown' },
-    -- { import = 'lazyvim.plugins.extras.lang.ocaml' },
-    -- { import = 'lazyvim.plugins.extras.lang.python' },
-    -- { import = 'lazyvim.plugins.extras.lang.r' },
-    -- { import = 'lazyvim.plugins.extras.lang.toml' },
-    -- { import = 'lazyvim.plugins.extras.lang.yaml' },
-    { import = 'lazyvim.plugins.extras.ui.edgy' },
-    { import = 'lazyvim.plugins.extras.util.dot' },
-    { import = 'lazyvim.plugins.extras.util.gitui' },
+    {
+      'LazyVim/LazyVim',
+      import = 'lazyvim.plugins',
+      opts = {
+        defaults = {
+          autocmds = false,
+          keymaps = false,
+        },
+      },
+    },
+    -- { import = 'lazyvim.plugins.extras.ai.copilot' },
+    -- { import = 'lazyvim.plugins.extras.ui.edgy' },
+    -- { import = 'lazyvim.plugins.extras.util.dot' },
+    -- { import = 'lazyvim.plugins.extras.util.gitui' },
     { import = 'plugins' },
   },
   local_spec = false,
+  lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false },
   rocks = { enabled = false },
   install = { colorscheme = { 'tokyonight' } },
-  ui = { icons = require('user.icons').lazy },
+  ui = {
+    border = 'rounded',
+    icons = require('user.icons').lazy,
+  },
   performance = {
     rtp = {
       disabled_plugins = {
