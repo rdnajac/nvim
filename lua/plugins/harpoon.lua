@@ -1,6 +1,6 @@
 return {
   'ThePrimeagen/harpoon',
-  enabled = false,
+  -- enabled = false,
   branch = 'harpoon2',
   opts = {
     menu = {
@@ -13,14 +13,14 @@ return {
   keys = function()
     local keys = {
       {
-        '<localleader>J',
+        '<localleader>j',
         function()
           require('harpoon'):list():add()
         end,
         desc = 'Harpoon File',
       },
       {
-        '<localleader>j',
+        '<localleader>\\',
         function()
           local harpoon = require('harpoon')
           harpoon.ui:toggle_quick_menu(harpoon:list())

@@ -3,7 +3,7 @@
 vim.cmd([[source ~/.vim/plugin/config/options.vim]])
 
 package.loaded['lazyvim.config.options'] = true
--- deckare LazyVim globals since we are disabling its default options
+-- declare LazyVim globals since we are disabling its default options
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 vim.g.autoformat = true

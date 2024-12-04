@@ -23,10 +23,7 @@ require('lazy').setup({
         },
       },
     },
-    -- { import = 'lazyvim.plugins.extras.ai.copilot' },
-    -- { import = 'lazyvim.plugins.extras.ui.edgy' },
-    -- { import = 'lazyvim.plugins.extras.util.dot' },
-    -- { import = 'lazyvim.plugins.extras.util.gitui' },
+    -- add my plugins from ~/.config/nvim/lua/plugins
     { import = 'plugins' },
   },
   local_spec = false,
