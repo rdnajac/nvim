@@ -1,7 +1,7 @@
 --- lua/plugins/oil.lua
 return {
   'stevearc/oil.nvim',
-  -- lazy = false,
+  enabled = false,
   cmd = 'Oil',
   opts = {},
   keys = {

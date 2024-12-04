@@ -1,2 +1,7 @@
 --- lua/plugins/ui.lua
-return {}
+return {
+  {
+    'folke/snacks.nvim',
+    opts = {},
+  },
+}

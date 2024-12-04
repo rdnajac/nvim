@@ -16,7 +16,7 @@ require('lazy').setup({
     { import = 'lazyvim.plugins.extras.coding.mini-comment' },
     { import = 'lazyvim.plugins.extras.coding.mini-surround' },
     { import = 'lazyvim.plugins.extras.editor.mini-files' },
-    { import = 'lazyvim.plugins.extras.editor.mini-move' },
+    -- { import = 'lazyvim.plugins.extras.editor.mini-move' },
     -- { import = 'lazyvim.plugins.extras.formatting.prettier' })
     -- { import = 'lazyvim.plugins.extras.lang.clangd' },
     -- { import = 'lazyvim.plugins.extras.lang.cmake' },
@@ -37,6 +37,7 @@ require('lazy').setup({
   pkg = { enabled = false },
   rocks = { enabled = false },
   install = { colorscheme = { 'tokyonight' } },
+  ui = { icons = require('user.icons').lazy },
   performance = {
     rtp = {
       disabled_plugins = {
