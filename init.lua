@@ -16,7 +16,7 @@ require('lazy').setup({
   spec = {
     {
       'LazyVim/LazyVim',
-      import = 'lazyvim.plugins.init',
+      import = 'lazyvim.plugins',
       opts = {
         defaults = {
           autocmds = false,
@@ -24,15 +24,6 @@ require('lazy').setup({
         },
       },
     },
-    { import = 'lazyvim.plugins.coding' },
-    { import = 'lazyvim.plugins.colorscheme' },
-    { import = 'lazyvim.plugins.editor' },
-    { import = 'lazyvim.plugins.formatting' },
-    { import = 'lazyvim.plugins.linting' },
-    { import = 'lazyvim.plugins.treesitter' },
-    { import = 'lazyvim.plugins.ui' },
-    { import = 'lazyvim.plugins.util' },
-    { import = 'lazyvim.plugins.xtras' },
     { import = 'plugins' },
   },
   local_spec = false,
