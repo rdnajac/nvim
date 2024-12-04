@@ -1,6 +1,9 @@
 --- lua/plugin/user/options.lua
 -- vim.cmd('silent! color tokyonight')
 vim.cmd([[source ~/.vim/plugin/config/options.vim]])
+
+package.loaded['lazyvim.config.options'] = true
+-- deckare LazyVim globals since we are disabling its default options
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
 vim.g.autoformat = true
@@ -10,6 +13,7 @@ vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
 vim.g.root_lsp_ignore = { 'copilot' }
 vim.g.deprecation_warnings = false
 vim.g.trouble_lualine = true
+vim.g.markdown_recommended_style = 0
 
 local opt = vim.opt
 
@@ -56,9 +60,3 @@ opt.smoothscroll = true
 opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
 opt.foldmethod = 'expr'
 opt.foldtext = ''
-
--- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
-
--- disable lazyvim options
-package.loaded['lazyvim.config.options'] = true
