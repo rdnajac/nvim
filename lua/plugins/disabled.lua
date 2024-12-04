@@ -12,12 +12,4 @@ return {
   -- ui
   { 'folke/noice.nvim', enabled = false },
   { 'lukas-reineke/indent-blankline.nvim', enabled = false },
-
-  -- disable keymaps
-  {
-    'mason.nvim',
-    keys = {
-      { '<leader>cm', false },
-    },
-  },
 }

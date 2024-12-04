@@ -16,7 +16,7 @@ require('lazy').setup({
   spec = {
     {
       'LazyVim/LazyVim',
-      import = 'lazyvim.plugins',
+      import = 'lazyvim.plugins.init',
       opts = {
         defaults = {
           autocmds = false,
@@ -24,7 +24,15 @@ require('lazy').setup({
         },
       },
     },
-    -- add my plugins from ~/.config/nvim/lua/plugins
+    { import = 'lazyvim.plugins.coding' },
+    { import = 'lazyvim.plugins.colorscheme' },
+    { import = 'lazyvim.plugins.editor' },
+    { import = 'lazyvim.plugins.formatting' },
+    { import = 'lazyvim.plugins.linting' },
+    { import = 'lazyvim.plugins.treesitter' },
+    { import = 'lazyvim.plugins.ui' },
+    { import = 'lazyvim.plugins.util' },
+    { import = 'lazyvim.plugins.xtras' },
     { import = 'plugins' },
   },
   local_spec = false,
