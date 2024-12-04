@@ -1,6 +1,8 @@
 --- lua/plugin/user/options.lua
--- vim.cmd('silent! color tokyonight')
-vim.cmd([[source ~/.vim/plugin/config/options.vim]])
+vim.cmd([[
+source ~/.vim/plugin/config/options.vim
+source ~/.vim/plugin/autocmds/filetypes.vim
+]])
 
 package.loaded['lazyvim.config.options'] = true
 -- declare LazyVim globals since we are disabling its default options

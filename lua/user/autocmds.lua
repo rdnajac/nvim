@@ -1,6 +1,4 @@
 --- user/autocmds.lua
-vim.cmd([[source ~/.vim/plugin/autocmds/filetypes.vim]])
-
 local au = vim.api.nvim_create_autocmd
 
 local function aug(name)

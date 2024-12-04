@@ -7,7 +7,7 @@ return {
   { 'echasnovski/mini.pairs', enabled = false },
 
   -- editor
-  { 'MagicDuck/grug-far.nvim', enabled = false },
+  -- { 'MagicDuck/grug-far.nvim', enabled = false },
 
   -- ui
   { 'folke/noice.nvim', enabled = false },

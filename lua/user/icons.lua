@@ -6,6 +6,12 @@ return {
     tmux = '💻',
     copilot = '🚀',
   },
+  diagnostics = {
+    Error = '🔥',
+    Warn = '💩',
+    Hint = '👾',
+    Info = '🧠',
+  },
   lazy = {
     cmd = '⌘',
     config = '🛠',
@@ -20,11 +26,5 @@ return {
     start = '🚀',
     task = '📌',
     lazy = '💤',
-  },
-  lsp = {
-    error = '🔥',
-    warn = '💩',
-    hint = '👾',
-    info = '🧠',
   },
 }

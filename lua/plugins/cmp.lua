@@ -1,4 +1,4 @@
--- lua/plugins/cmp.lua
+--- lua/plugins/cmp.lua
 return {
   'hrsh7th/nvim-cmp',
   opts = function(_, opts)

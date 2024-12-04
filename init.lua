@@ -12,6 +12,8 @@ else
   vim.opt.rtp:prepend(lazypath)
 end
 
+local icons = require('user.icons')
+
 require('lazy').setup({
   spec = {
     {
@@ -21,6 +23,9 @@ require('lazy').setup({
         defaults = {
           autocmds = false,
           keymaps = false,
+        },
+        icons = {
+          diagnostics = icons.diagnostics,
         },
       },
     },
@@ -33,7 +38,7 @@ require('lazy').setup({
   install = { colorscheme = { 'tokyonight' } },
   ui = {
     border = 'rounded',
-    icons = require('user.icons').lazy,
+    icons = icons.lazy,
   },
   performance = {
     rtp = {
