@@ -27,6 +27,13 @@ return {
         end,
         desc = 'Harpoon Quick Menu',
       },
+      {
+        '<localleader><Tab>',
+        function()
+          require('harpoon'):list():prev()
+        end,
+        desc = 'Harpoon Previous',
+      },
     }
 
     for i = 1, 5 do
