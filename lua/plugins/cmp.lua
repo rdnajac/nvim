@@ -11,9 +11,20 @@ return {
 
     local cmp = require('cmp')
 
+    cmp.setup({
+      completion = {
+        -- autocomplete = false,
+      },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+    })
+
     -- keymaps
     opts.mapping = cmp.mapping.preset.insert({
       ['<C-j>'] = LazyVim.cmp.confirm({ select = true }),
+      -- ['<C-Space>'] = cmp.mapping.complete(),
     })
 
     opts.mapping = vim.tbl_extend('force', opts.mapping, {

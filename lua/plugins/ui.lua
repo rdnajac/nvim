@@ -2,10 +2,12 @@
 return {
   {
     'nvim-lualine/lualine.nvim',
-    opts = function(_, opts)
-      opts.tabline = opts.sections
-      opts.sections = {}
-    end,
+    -- opts = function(_, opts)
+    --   opts.tabline = opts.sections
+    --   opts.sections = {}
+    --   opts.inactive_sections = {}
+    --   opts.always_show_tabline = false
+    -- end,
   },
   {
     'folke/snacks.nvim',
