@@ -5,7 +5,7 @@ return {
     -- terminal_colors = false,
     styles = {
       comments = { italic = true },
-      keywords = { bold = true },
+      keywords = { italic = false, bold = true },
       sidebars = 'transparent',
       -- floats = 'transparent',
     },
