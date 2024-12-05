@@ -7,8 +7,5 @@ return {
       sh = { 'shfmt' },
       python = { 'black' },
     },
-    -- init = function()
-    --   vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-    -- end,
   },
 }
