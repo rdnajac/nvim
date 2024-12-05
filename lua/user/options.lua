@@ -1,22 +1,4 @@
 --- lua/plugin/user/options.lua
-vim.cmd([[
-source ~/.vim/plugin/config/options.vim
-source ~/.vim/plugin/autocmds/filetypes.vim
-]])
-
-package.loaded['lazyvim.config.options'] = true
--- declare LazyVim globals since we are disabling its default options
-vim.g.mapleader = ' '
-vim.g.maplocalleader = '\\'
-vim.g.autoformat = true
-vim.g.lazyvim_picker = 'auto'
-vim.g.ai_cmp = true
-vim.g.root_spec = { 'lsp', { '.git', 'lua' }, 'cwd' }
-vim.g.root_lsp_ignore = { 'copilot' }
-vim.g.deprecation_warnings = false
-vim.g.trouble_lualine = true
-vim.g.markdown_recommended_style = 0
-
 local opt = vim.opt
 
 opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus' -- Sync with system clipboard
@@ -50,7 +32,6 @@ opt.signcolumn = 'yes' -- Always show the signcolumn, otherwise it would shift t
 opt.smartindent = true -- Insert indents automatically
 opt.spelllang = { 'en' }
 opt.splitkeep = 'screen'
-opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
 opt.termguicolors = true -- True color support
 opt.undofile = true
 opt.undolevels = 10000
@@ -62,3 +43,4 @@ opt.smoothscroll = true
 opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
 opt.foldmethod = 'expr'
 opt.foldtext = ''
+opt.numberwidth = 4

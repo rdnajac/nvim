@@ -1,9 +1,3 @@
---- init.lua
-require('user.options')
-require('user.autocmds')
-require('user.commands')
-require('user.keymaps')
-
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -54,9 +48,4 @@ require('lazy').setup({
       },
     },
   },
-})
-
--- diagnostics
-vim.diagnostic.config({
-  virtual_text = false,
 })

@@ -2,6 +2,16 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
 
+map('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
+map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+map('n', '<leader>ww', function()
+  if vim.bo.filetype == 'oil' then
+    vim.cmd('OilSave')
+  else
+    vim.cmd('w!')
+  end
+end, { desc = 'Save' })
+
 map('c', '??', 'verbose set?<Left>', { noremap = true })
 map('c', '!!', '!./%', { noremap = true })
 
@@ -22,16 +32,16 @@ map('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move Up' })
 map('v', '<A-j>', ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = 'Move Down' })
 map('v', '<A-k>', ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = 'Move Up' })
 
--- Clear search with <esc>
+-- Clear search
 map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and Clear hlsearch' })
-
--- Clear search, diff update and redraw (taken from runtime/lua/_editor.lua)
 map(
   'n',
   '<leader>ur',
   '<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>',
   { desc = 'Redraw / Clear hlsearch / Diff Update' }
 )
+map('n', '<leader>ui', vim.show_pos, { desc = 'Inspect Pos' })
+map('n', '<leader>uI', '<cmd>InspectTree<cr>', { desc = 'Inspect Tree' })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map('n', 'n', "'Nn'[v:searchforward].'zv'", { expr = true, desc = 'Next Search Result' })
@@ -46,14 +56,11 @@ map('i', ',', ',<c-g>u')
 map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
 
---keywordprg
-map('n', '<leader>K', '<cmd>norm! K<cr>', { desc = 'Keywordprg' })
-
 -- better indenting
 map('v', '<', '<gv')
 map('v', '>', '>gv')
 
--- commenting
+-- Commenting
 map('n', 'gco', 'o<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Below' })
 map('n', 'gcO', 'O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>', { desc = 'Add Comment Above' })
 
@@ -66,6 +73,8 @@ local diagnostic_goto = function(next, severity)
   end
 end
 map('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Line Diagnostics' })
+
+-- Next/Prev
 map('n', ']d', diagnostic_goto(true), { desc = 'Next Diagnostic' })
 map('n', '[d', diagnostic_goto(false), { desc = 'Prev Diagnostic' })
 map('n', ']e', diagnostic_goto(true, 'ERROR'), { desc = 'Next Error' })
@@ -76,14 +85,10 @@ map('n', '[w', diagnostic_goto(false, 'WARN'), { desc = 'Prev Warning' })
 map('n', '[q', vim.cmd.cprev, { desc = 'Previous Quickfix' })
 map('n', ']q', vim.cmd.cnext, { desc = 'Next Quickfix' })
 
--- quit
-map('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
+map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 
--- highlights under cursor
-map('n', '<leader>ui', vim.show_pos, { desc = 'Inspect Pos' })
-map('n', '<leader>uI', '<cmd>InspectTree<cr>', { desc = 'Inspect Tree' })
-
--- windows
+-- Windows
 map('n', '<C-h>', '<C-w>h', { desc = 'Go to Left Window', remap = true })
 map('n', '<C-j>', '<C-w>j', { desc = 'Go to Lower Window', remap = true })
 map('n', '<C-k>', '<C-w>k', { desc = 'Go to Upper Window', remap = true })
@@ -104,8 +109,6 @@ map('t', '<C-/>', '<cmd>close<cr>', { desc = 'Hide Terminal' })
 map('t', '<c-_>', '<cmd>close<cr>', { desc = 'which_key_ignore' })
 
 -- stylua: ignore start
-
--- Floating terminal
 map('n', '<leader>fT', function() Snacks.terminal() end, { desc = 'Terminal (cwd)' })
 map('n', '<leader>ft', function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = 'Terminal (Root Dir)' })
 map('n', '<c-/>', function() Snacks.terminal(nil, { cwd = LazyVim.root() }) end, { desc = 'Terminal (Root Dir)' })
@@ -132,8 +135,6 @@ map({ 'n', 'v' }, 'Q', function() LazyVim.format({ force = true }) end, { desc =
 -- Buffers
 map('n', '<Tab>', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
 map('n', '<S-Tab>', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
-map('n', '[b', '<cmd>bprevious<cr>', { desc = 'Prev Buffer' })
-map('n', ']b', '<cmd>bnext<cr>', { desc = 'Next Buffer' })
 map('n', '<leader>bb', '<cmd>e #<cr>', { desc = 'Switch to Other Buffer' })
 map('n', '<leader>bd', function() Snacks.bufdelete() end, { desc = 'Delete Buffer' })
 map('n', '<leader>bD', '<cmd>:bd<cr>', { desc = 'Delete Buffer and Window' })
