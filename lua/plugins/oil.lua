@@ -4,6 +4,6 @@ return {
   cmd = 'Oil',
   opts = {},
   keys = {
-    { '-', '<CMD>Oil --float<CR>' },
+    { '-', '<CMD>Oil<CR>' },
   },
 }
