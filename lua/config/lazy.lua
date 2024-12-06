@@ -1,4 +1,17 @@
--- bootstrap lazy.nvim
+-- snacks.profiler {{{
+if vim.env.PROF then
+  local snacks = vim.fn.stdpath('data') .. '/lazy/snacks.nvim'
+  vim.opt.rtp:append(snacks)
+  require('snacks.profiler').startup({
+    startup = {
+      event = 'VimEnter',
+      -- event = "UIEnter",
+      -- event = "VeryLazy",
+    },
+  })
+end
+-- }}}
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   load(vim.fn.system('curl -s https://raw.githubusercontent.com/folke/lazy.nvim/main/bootstrap.lua'))()
@@ -10,6 +23,19 @@ local icons = require('user.icons')
 
 require('lazy').setup({
   spec = {
+    {
+      'folke/tokyonight.nvim',
+      opts = {
+        transparent = true,
+        -- terminal_colors = false,
+        styles = {
+          comments = { italic = true },
+          keywords = { italic = false, bold = true },
+          sidebars = 'transparent',
+          -- floats = 'transparent',
+        },
+      },
+    },
     {
       'LazyVim/LazyVim',
       import = 'lazyvim.plugins',
@@ -40,7 +66,7 @@ require('lazy').setup({
         'gzip',
         -- 'matchit',
         -- 'matchparen',
-        'netrwPlugin',
+        -- 'netrwPlugin',
         'tarPlugin',
         'tohtml',
         'tutor',

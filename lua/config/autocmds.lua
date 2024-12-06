@@ -1,4 +1,3 @@
---- user/autocmds.lua
 local au = vim.api.nvim_create_autocmd
 
 local function aug(name)
@@ -15,7 +14,6 @@ au({ 'FocusGained', 'TermClose', 'TermLeave', 'BufWinEnter' }, {
   end,
 })
 
--- Highlight on yank
 au('TextYankPost', {
   group = aug('highlightYank'),
   callback = function()
@@ -33,7 +31,6 @@ au({ 'VimResized' }, {
   end,
 })
 
--- Go to last cursor position when opening a buffer
 au('BufReadPost', {
   group = aug('restore_cursor_position'),
   callback = function(event)
@@ -97,7 +94,6 @@ au('FileType', {
   end,
 })
 
--- wrap and check for spell in text filetypes
 au('FileType', {
   group = aug('wrap_spell'),
   pattern = { 'text', 'plaintex', 'typst', 'gitcommit', 'markdown' },

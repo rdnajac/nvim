@@ -7,6 +7,7 @@ return {
   { 'echasnovski/mini.pairs', enabled = false },
 
   -- editor
+  'nvim-neo-tree/neo-tree.nvim',
   -- { 'MagicDuck/grug-far.nvim', enabled = false },
 
   -- ui

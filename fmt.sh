@@ -1,2 +1,2 @@
 #!/bin/bash
-stylua -v init.lua ./lua/
+stylua -v ./lua/
