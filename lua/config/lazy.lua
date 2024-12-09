@@ -25,7 +25,7 @@ require('lazy').setup({
   spec = {
     {
       'LazyVim/LazyVim',
-      -- enabled = false,
+      -- cond = not vim.env.LAZY,
       import = 'lazyvim.plugins',
       opts = {
         defaults = {

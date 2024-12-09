@@ -14,8 +14,8 @@ return {
       -- - `height` and `width` are maximum dimensions.
       -- - `border` defines border (as in `nvim_open_win()`).
       window = {
-        info = { height = 25, width = 80, border = 'none' },
-        signature = { height = 25, width = 80, border = 'none' },
+        info = { height = 25, width = 80, border = 'rounded' },
+        signature = { height = 25, width = 80, border = 'rounded' },
       },
 
       -- Way of how module does LSP completion

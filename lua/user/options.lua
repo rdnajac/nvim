@@ -1,3 +1,4 @@
+-- if this file is `require`d, then don't load lazyvim vim.opt.ons
 package.loaded['lazyvim.config.options'] = true
 
 vim.g.mapleader = ' '
@@ -11,12 +12,7 @@ vim.g.deprecation_warnings = false
 vim.g.trouble_lualine = true
 vim.g.markdown_recommended_style = 0
 
-local opt = vim.opt
-
-opt.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus' -- Sync with system clipboard
--- opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
--- opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.fillchars = {
+vim.opt.fillchars = {
   foldopen = '',
   foldclose = '',
   fold = ' ',
@@ -24,35 +20,17 @@ opt.fillchars = {
   diff = '╱',
   eob = ' ',
 }
-opt.foldlevel = 99
-opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
-opt.formatoptions = 'jcroqlnt' -- tcqj
-opt.grepformat = '%f:%l:%c:%m'
-opt.grepprg = 'rg --vimgrep'
-opt.inccommand = 'nosplit' -- preview incremental substitute
-opt.jumpoptions = 'view'
-opt.laststatus = 3 -- global statusline
-opt.pumblend = 10 -- Popup blend
-opt.pumheight = 10 -- Maximum number of entries in a popup
-opt.ruler = false -- Disable the default ruler
-opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
-opt.shiftwidth = 2 -- Size of an indent
-opt.shortmess:append({ W = true, I = true, c = true, C = true })
-opt.showmode = false -- Dont show mode since we have a statusline
-opt.sidescrolloff = 8 -- Columns of context
-opt.signcolumn = 'yes' -- Always show the signcolumn, otherwise it would shift the text each time
-opt.smartindent = true -- Insert indents automatically
-opt.spelllang = { 'en' }
-opt.splitkeep = 'screen'
-opt.termguicolors = true -- True color support
-opt.undofile = true
-opt.undolevels = 10000
-opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.virtualedit = 'block' -- Allow cursor to move where there is no text in visual block mode
-opt.wildmode = 'longest:full,full' -- Command-line completion mode
-opt.winminwidth = 5 -- Minimum window width
-opt.smoothscroll = true
-opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
-opt.foldmethod = 'expr'
-opt.foldtext = ''
-opt.numberwidth = 4
+vim.opt.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = 'expr'
+vim.opt.foldtext = ''
+vim.opt.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+vim.opt.formatoptions = 'jcroqlnt' -- tcqj
+vim.opt.grepformat = '%f:%l:%c:%m'
+vim.opt.grepprg = 'rg --vimgrep'
+vim.opt.inccommand = 'nosplit'
+vim.opt.jumpoptions = 'view'
+vim.opt.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+vim.opt.shortmess:append({ W = true, I = true, c = true, C = true })
+vim.opt.smartindent = true
+vim.opt.wildmode = 'longest:full,full'
