@@ -112,6 +112,14 @@ au('FileType', {
   end,
 })
 
+au('FileType', {
+  group = aug('lua_fold'),
+  pattern = { 'lazy' },
+  callback = function()
+    vim.opt_local.foldlevel = 0
+  end,
+})
+
 -- Fix conceallevel for json files
 au({ 'FileType' }, {
   group = aug('json_conceal'),
