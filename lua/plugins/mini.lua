@@ -1,9 +1,7 @@
 return {
-  -- LazyVim wants to use mini.pairs; don't
-  { 'echasnovski/mini.pairs', enabled = false },
-
   {
     'echasnovski/mini.completion',
+    enabled = false,
     opts = {
       -- Delay (debounce type, in ms) between certain Neovim event and action.
       -- This can be used to (virtually) disable certain automatic actions by
