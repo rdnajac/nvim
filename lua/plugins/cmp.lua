@@ -1,6 +1,7 @@
 --- lua/plugins/cmp.lua
 return {
   'hrsh7th/nvim-cmp',
+  enabled = false,
   opts = function(_, opts)
     -- helper function to check if there are words before the cursor
     local has_words_before = function()
@@ -13,7 +14,7 @@ return {
 
     cmp.setup({
       completion = {
-        -- autocomplete = false,
+        autocomplete = false,
       },
       window = {
         completion = cmp.config.window.bordered(),

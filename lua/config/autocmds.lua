@@ -103,6 +103,15 @@ au('FileType', {
   end,
 })
 
+-- TODO: why doesn't this work?
+au('FileType', {
+  group = aug('nowrap'),
+  pattern = { 'lazy' },
+  callback = function()
+    vim.opt_local.wrap = false
+  end,
+})
+
 -- Fix conceallevel for json files
 au({ 'FileType' }, {
   group = aug('json_conceal'),

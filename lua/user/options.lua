@@ -1,8 +1,4 @@
---- lua/plugin/user/options.lua
-
--- bootstrap nvim configuration with lazyvim
 package.loaded['lazyvim.config.options'] = true
--- declare LazyVim globals since we are disabling its default options
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
