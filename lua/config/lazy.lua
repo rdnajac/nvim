@@ -4,9 +4,9 @@ if vim.env.PROF then
   vim.opt.rtp:append(snacks)
   require('snacks.profiler').startup({
     startup = {
-      event = 'VimEnter',
+      -- event = 'VimEnter',
       -- event = "UIEnter",
-      -- event = "VeryLazy",
+      event = 'VeryLazy',
     },
   })
 end
@@ -24,20 +24,8 @@ local icons = require('user.icons')
 require('lazy').setup({
   spec = {
     {
-      'folke/tokyonight.nvim',
-      opts = {
-        transparent = true,
-        -- terminal_colors = false,
-        styles = {
-          comments = { italic = true },
-          keywords = { italic = false, bold = true },
-          sidebars = 'transparent',
-          -- floats = 'transparent',
-        },
-      },
-    },
-    {
       'LazyVim/LazyVim',
+      -- enabled = false,
       import = 'lazyvim.plugins',
       opts = {
         defaults = {
@@ -45,11 +33,14 @@ require('lazy').setup({
           keymaps = false,
         },
         icons = {
+          -- TODO delegate to mini.icons?
           diagnostics = icons.diagnostics,
         },
       },
     },
     { import = 'plugins' },
+    -- { 'tpope/vim-fugitive' },
+    -- { 'tpope/vim-repeat' },
   },
   local_spec = false,
   lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
@@ -66,7 +57,7 @@ require('lazy').setup({
         'gzip',
         -- 'matchit',
         -- 'matchparen',
-        -- 'netrwPlugin',
+        'netrwPlugin',
         'tarPlugin',
         'tohtml',
         'tutor',
