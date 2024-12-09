@@ -12,7 +12,8 @@ return {
             { icon = '🔍 ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
             { icon = '📝 ', key = 't', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
             { icon = '📑 ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')", },
-            { icon = '📚 ', key = 'h', desc = 'Help', action = ":lua Snacks.dashboard.pick('help_tags')" },
+            { icon = '📚 ', key = '?', desc = 'Help', action = ":lua Snacks.dashboard.pick('help_tags')" },
+            -- { icon = '🪝 ', key = 'h', desc = 'Harpoon', action = ":lua Harpoon.
             { icon =  '⌨️ ', key = 'k', desc = 'Keymaps', action = ":lua Snacks.dashboard.pick('keymaps')" },
             { icon = '⚙️ ', key = 'c', desc = 'Config', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})", },
             { icon = '👨‍💻 ', key = 'd', desc = 'Data', action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('data')})", },
@@ -30,6 +31,7 @@ return {
       sections = {
         {
           section = 'terminal',
+          -- TODO change cmd based on type of nvim loaded
           -- cmd = 'pokeget unown-n unown-v unown-i unown-m 2> /dev/null',
           cmd = 'pokeget unown-l unown unown-z unown-y 2> /dev/null',
           padding = 1,
@@ -37,7 +39,7 @@ return {
         },
         { section = 'startup' },
         { section = 'keys', padding = 1, width = 42 },
-        { section = 'header' },
+        -- { section = 'header' },
       },
     },
   },

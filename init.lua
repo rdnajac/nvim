@@ -4,5 +4,5 @@
 -- source ~/.vim/plugin/mytabline.vim
 -- source ~/.vim/plugin/rename.vim
 -- source ~/.vim/plugin/delete.vim
-require('user.options')
+-- require('user.options')
 require('config.lazy')
