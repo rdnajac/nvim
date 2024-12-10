@@ -24,7 +24,6 @@ end
 require('lazy').setup({
   spec = LAZY_SPEC,
   local_spec = false,
-  lockfile = vim.fn.stdpath('config') .. '/.lazy-lock.json',
   pkg = { enabled = false },
   rocks = { enabled = false },
   install = { colorscheme = { 'tokyonight' } },

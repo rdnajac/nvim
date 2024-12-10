@@ -1,4 +1,3 @@
---- lua/plugin/formatting.lua
 return {
   'stevearc/conform.nvim',
   opts = {
