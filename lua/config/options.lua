@@ -44,3 +44,31 @@ set.virtualedit = 'block'
 set.whichwrap:append('<,>,[,],h,l')
 set.winminwidth = 5
 set.wrap = false
+
+-- lazy
+set.fillchars = {
+  foldopen = '',
+  foldclose = '',
+  fold = ' ',
+  foldsep = ' ',
+  diff = '╱',
+  eob = ' ',
+}
+set.foldlevel = 99
+set.foldmethod = 'expr'
+set.foldtext = ''
+set.formatoptions = 'jcroqlnt' -- tcqj
+set.grepformat = '%f:%l:%c:%m'
+set.grepprg = 'rg --vimgrep'
+set.inccommand = 'nosplit'
+set.jumpoptions = 'view'
+set.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
+-- FIXME:
+set.shortmess:append({ W = true, I = true, c = true, C = true })
+-- FIXME:
+set.smartindent = true
+-- FIXME:
+set.wildmode = 'longest:full,full'
+
+set.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
+set.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"

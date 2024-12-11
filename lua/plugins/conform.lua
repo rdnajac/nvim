@@ -7,4 +7,10 @@ return {
       python = { 'black' },
     },
   },
+  formatters = {
+    injected = { options = { ignore_errors = true } },
+    shfmt = {
+      prepend_args = { '-bn', '-ci' },
+    },
+  },
 }

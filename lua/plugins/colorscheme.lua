@@ -14,12 +14,8 @@ return {
       },
     },
     -- Uncomment if not using Lazy
-    init = function()
-      if not vim.env.LAZY then
-        vim.cmd([[colorscheme tokyonight]])
-      end
-    end,
+    -- init = function()
+    --   vim.cmd([[colorscheme tokyonight]])
+    -- end,
   },
-  -- LazyVim wants to load this; don't
-  { 'catppuccin/nvim', enabled = false },
 }

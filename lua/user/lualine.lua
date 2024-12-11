@@ -1,6 +1,5 @@
 return {
   {
-    'nvim-lualine/lualine.nvim',
     -- enabled = false,
     opts = function(_, opts)
       opts.tabline = opts.sections

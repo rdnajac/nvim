@@ -29,6 +29,7 @@ require('lazy').setup({
   install = { colorscheme = { 'tokyonight' } },
   ui = {
     border = 'rounded',
+    -- TODO: delegate to mini.icons?
     icons = require('user.icons').lazy,
   },
   performance = {
