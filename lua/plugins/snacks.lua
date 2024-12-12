@@ -18,7 +18,7 @@ return {
           keys = {
             -- stylua: ignore start
             { icon = '💤 ', key = 'l', desc = 'Lazy', action = ':Lazy' },
-            { icon = '🔍 ', key = 'f', desc = 'Find File', action = ":Telescope find_files" },
+            { icon = '🔍 ', key = 'f', desc = 'Find File', action = ":lua Snacks.dashboard.pick('files')" },
             { icon = '📝 ', key = 't', desc = 'Find Text', action = ":lua Snacks.dashboard.pick('live_grep')" },
             { icon = '📑 ', key = 'r', desc = 'Recent Files', action = ":lua Snacks.dashboard.pick('oldfiles')" },
             { icon = '📚 ', key = '?', desc = 'Help', action = ":lua Snacks.dashboard.pick('help_tags')" },

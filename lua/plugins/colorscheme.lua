@@ -13,9 +13,5 @@ return {
         floats = 'transparent',
       },
     },
-    -- Uncomment if not using Lazy
-    -- init = function()
-    --   vim.cmd([[colorscheme tokyonight]])
-    -- end,
   },
 }
