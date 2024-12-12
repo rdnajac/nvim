@@ -72,3 +72,5 @@ set.wildmode = 'longest:full,full'
 
 set.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
 set.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
+
+set.mousescroll = 'ver:2,hor:0'
