@@ -5,7 +5,6 @@ set.autoread = true
 set.autowrite = true
 set.breakindent = true
 set.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus'
-set.completeopt = { 'menuone', 'noselect' }
 set.confirm = true
 set.cursorline = true
 set.foldopen:append('insert,jump')
@@ -32,6 +31,7 @@ set.smartcase = true
 set.smoothscroll = true
 set.spelllang = { 'en' }
 set.splitbelow = true
+set.mousescroll = 'ver:2,hor:0'
 set.splitkeep = 'screen'
 set.splitright = true
 set.tabstop = 8
@@ -44,6 +44,7 @@ set.virtualedit = 'block'
 set.whichwrap:append('<,>,[,],h,l')
 set.winminwidth = 5
 set.wrap = false
+set.completeopt = 'menu,preview'
 
 -- lazy
 set.fillchars = {
@@ -57,20 +58,13 @@ set.fillchars = {
 set.foldlevel = 99
 set.foldmethod = 'expr'
 set.foldtext = ''
-set.formatoptions = 'jcroqlnt' -- tcqj
-set.grepformat = '%f:%l:%c:%m'
-set.grepprg = 'rg --vimgrep'
+-- rm o
+set.formatoptions = 'jcrqlnt' -- tcqj
 set.inccommand = 'nosplit'
 set.jumpoptions = 'view'
-set.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize', 'help', 'globals', 'skiprtp', 'folds' }
 -- FIXME:
 set.shortmess:append({ W = true, I = true, c = true, C = true })
 -- FIXME:
 set.smartindent = true
 -- FIXME:
 set.wildmode = 'longest:full,full'
-
-set.foldexpr = "v:lua.require'lazyvim.util'.ui.foldexpr()"
-set.formatexpr = "v:lua.require'lazyvim.util'.format.formatexpr()"
-
-set.mousescroll = 'ver:2,hor:0'
