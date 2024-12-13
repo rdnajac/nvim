@@ -1,50 +1,87 @@
-return {
-  'stevearc/oil.nvim',
-  cmd = 'Oil',
-  keys = { { '-', '<CMD>Oil --float<CR>' } },
-  opts = function()
-    local git_utils = require('helpers.git_utils')
-    local git_status = git_utils.new_git_status()
-    local refresh = require('oil.actions').refresh
-    local orig_refresh = refresh.callback
-    refresh.callback = function(...)
-      git_status = git_utils.new_git_status()
-      orig_refresh(...)
-    end
+local M = { 'stevearc/oil.nvim' }
 
-    return {
-      default_file_explorer = true,
-      view_options = {
-        is_hidden_file = function(name, bufnr)
-          local dir = require('oil').get_current_dir(bufnr)
-          local is_dotfile = vim.startswith(name, '.') and name ~= '..'
-          -- if no local directory (e.g. for ssh connections), just hide dotfiles
-          if not dir then
-            return is_dotfile
-          end
-          -- dotfiles are considered hidden unless tracked
-          if is_dotfile then
-            return not git_status[dir].tracked[name]
+-- Utility functions for Git status
+-- stylua: ignore
+local function parse_output(proc)
+  local result = proc:wait()
+  local ret = {}
+  if result.code == 0 then
+    for line in vim.gsplit(result.stdout, '\n', { plain = true, trimempty = true }) do
+      line = line:gsub('/$', '') -- Remove trailing slash
+      ret[line] = true
+    end
+  end
+  return ret
+end
+
+local function new_git_status()
+  return setmetatable({}, {
+    __index = function(self, key)
+      local ignore_proc = vim.system(
+        { 'git', 'ls-files', '--ignored', '--exclude-standard', '--others', '--directory' },
+        { cwd = key, text = true }
+      )
+      local tracked_proc = vim.system({ 'git', 'ls-tree', 'HEAD', '--name-only' }, { cwd = key, text = true })
+      local ret = {
+        ignored = parse_output(ignore_proc),
+        tracked = parse_output(tracked_proc),
+      }
+      rawset(self, key, ret)
+      return ret
+    end,
+  })
+end
+
+-- Oil.nvim configuration
+M.cmd = 'Oil'
+M.keys = { { '-', '<CMD>Oil --float<CR>' } }
+
+M.opts = function()
+  -- Git utilities
+  local git_status = new_git_status()
+
+  -- Refresh action override
+  local refresh = require('oil.actions').refresh
+  local orig_refresh = refresh.callback
+  refresh.callback = function(...)
+    git_status = new_git_status()
+    orig_refresh(...)
+  end
+
+  -- Return options for Oil.nvim
+  return {
+    default_file_explorer = true,
+    view_options = {
+      is_hidden_file = function(name, bufnr)
+        local dir = require('oil').get_current_dir(bufnr)
+        local is_dotfile = vim.startswith(name, '.') and name ~= '..'
+        -- If no local directory (e.g., for SSH connections), hide only dotfiles
+        if not dir then
+          return is_dotfile
+        end
+        -- Dotfiles are hidden unless tracked
+        if is_dotfile then
+          return not git_status[dir].tracked[name]
+        else
+          -- Check if the file is gitignored
+          return git_status[dir].ignored[name]
+        end
+      end,
+    },
+    keymaps = {
+      ['gi'] = {
+        desc = 'Toggle file detail view',
+        callback = function()
+          detail = not detail
+          if detail then
+            require('oil').set_columns({ 'icon', 'permissions', 'size', 'mtime' })
           else
-            -- Check if file is gitignored
-            return git_status[dir].ignored[name]
+            require('oil').set_columns({ 'icon' })
           end
         end,
       },
+    },
+  }
+end
 
-      keymaps = {
-        ['gi'] = {
-          desc = 'Toggle file detail view',
-          callback = function()
-            detail = not detail
-            if detail then
-              require('oil').set_columns({ 'icon', 'permissions', 'size', 'mtime' })
-            else
-              require('oil').set_columns({ 'icon' })
-            end
-          end,
-        },
-      },
-    }
-  end,
-}
+return M
