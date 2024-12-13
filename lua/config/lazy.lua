@@ -22,13 +22,7 @@ end
 -- }}}
 
 require('lazy').setup({
-  spec = {
-    {
-      'LazyVim/LazyVim',
-      import = 'lazyvim.plugins', -- ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/
-    },
-    { import = 'plugins' },
-  },
+  spec = { { 'LazyVim/LazyVim', import = 'lazyvim.plugins' }, { import = 'plugins' } },
   install = { colorscheme = { 'tokyonight' } },
   ui = { border = 'rounded' },
   performance = {

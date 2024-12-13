@@ -22,7 +22,7 @@ return {
           width = 69,
         },
         { section = 'startup', padding = 1 },
-        { section = 'keys', padding = 1, width = 42 },
+        { section = 'keys', padding = 1 },
         { section = 'header', padding = 1 },
       },
     },

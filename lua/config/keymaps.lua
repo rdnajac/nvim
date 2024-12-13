@@ -2,7 +2,7 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
 
-map('n', '<leader>sp', "<cmd>lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('data')})<CR>")
+map('n', '<leader>sp', "<cmd>lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('data') .. '/lazy'})<CR>")
 
 -- TODO:
 -- rm LazyVim wk tab and buffer
@@ -21,6 +21,12 @@ vnoremap ; :
 " buffer navigation
 nnoremap <tab>   :bnext<CR>
 nnoremap <s-tab> :bprevious<CR>
+
+" make mini-surround more like vim-surround
+nmap S sa
+vmap S sa
+nmap sc sr
+vmap sc sr
 
 cnoreabbrev Wq wqa!
 cnoreabbrev Qw wqa!

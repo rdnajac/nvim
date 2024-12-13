@@ -60,8 +60,8 @@ set.fillchars = {
 set.foldlevel = 99
 set.foldmethod = 'expr'
 set.foldtext = ''
--- rm o
-set.formatoptions = 'jcrqlnt' -- tcqj
+-- LazyVim wants to include `o` and `c`
+set.formatoptions = 'jrqlnt' -- tcqj
 set.inccommand = 'nosplit'
 set.jumpoptions = 'view'
 -- FIXME:

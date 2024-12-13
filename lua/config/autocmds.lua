@@ -6,7 +6,7 @@ local function aug(name)
 end
 
 au('CmdwinEnter', {
-  group = aug('noCmd'),
+  group = aug('noCmdwin'),
   pattern = { '*' },
   callback = function()
     vim.cmd('quit')
@@ -14,7 +14,7 @@ au('CmdwinEnter', {
 })
 
 vim.cmd([[
-  augroup myftplugin
+  augroup ftplugin
   autocmd!
   autocmd FileType sh             setlocal sw=8 sts=8 noexpandtab wrap
   autocmd FileType c              setlocal sw=8 sts=8 noexpandtab
@@ -23,8 +23,7 @@ vim.cmd([[
   autocmd FileType tex            setlocal sw=2 sts=2   expandtab fdm=syntax
   autocmd FileType vim,lua        setlocal sw=2 sts=2   expandtab fdm=marker fdl=0
   autocmd FileType javascript     setlocal sw=2 sts=2   expandtab
-  autocmd FileType html,css       setlocal sw=2 sts=2   expandtab
+  autocmd FileType html,css,scss  setlocal sw=2 sts=2   expandtab
   autocmd FileType json,yaml,toml setlocal sw=2 sts=2   expandtab
-  autocmd CmdwinEnter * quit
 augroup END
 ]])
