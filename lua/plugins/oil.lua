@@ -1,14 +1,19 @@
 return {
   'stevearc/oil.nvim',
   cmd = 'Oil',
-  keys = { { '-', '<CMD>Oil --float<CR>' } },
+  keys = {
+    { '-', '<CMD>Oil --float<CR>' },
+    {
+      '<leader>e',
+      function()
+        vim.cmd('topleft vsplit | vertical resize 25 | Oil')
+      end,
+      desc = 'Open Oil in a 20% vertical split',
+    },
+  },
   opts = function()
     local git_utils = require('helpers.git_utils')
-
-    -- Initialize git status cache
     local git_status = git_utils.new_git_status()
-
-    -- Clear git status cache on refresh
     local refresh = require('oil.actions').refresh
     local orig_refresh = refresh.callback
     refresh.callback = function(...)
@@ -17,6 +22,7 @@ return {
     end
 
     return {
+      default_file_explorer = true,
       view_options = {
         is_hidden_file = function(name, bufnr)
           local dir = require('oil').get_current_dir(bufnr)

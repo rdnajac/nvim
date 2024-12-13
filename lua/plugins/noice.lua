@@ -4,7 +4,6 @@ return {
     cmdline = {
       enabled = true,
       -- view = 'cmdline',
-      opts = {},
       format = {
         cmdline = { pattern = '^:', icon = ':', lang = 'vim' },
         filter = { pattern = '^:%s*!', icon = '!', lang = 'bash' },
