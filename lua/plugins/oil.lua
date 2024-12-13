@@ -1,16 +1,7 @@
 return {
   'stevearc/oil.nvim',
   cmd = 'Oil',
-  keys = {
-    { '-', '<CMD>Oil --float<CR>' },
-    {
-      '<leader>e',
-      function()
-        vim.cmd('topleft vsplit | vertical resize 25 | Oil')
-      end,
-      desc = 'Open Oil in a 20% vertical split',
-    },
-  },
+  keys = { { '-', '<CMD>Oil --float<CR>' } },
   opts = function()
     local git_utils = require('helpers.git_utils')
     local git_status = git_utils.new_git_status()

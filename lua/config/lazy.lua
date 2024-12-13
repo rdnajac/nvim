@@ -26,41 +26,11 @@ require('lazy').setup({
     {
       'LazyVim/LazyVim',
       import = 'lazyvim.plugins', -- ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/
-      opts = {
-        icons = {
-          diagnostics = {
-            Error = '🔥',
-            Warn = '💩',
-            Hint = '👾',
-            Info = '🧠',
-          },
-        },
-      },
     },
     { import = 'plugins' },
   },
-  local_spec = false,
-  pkg = { enabled = false },
-  rocks = { enabled = false },
   install = { colorscheme = { 'tokyonight' } },
-  ui = {
-    border = 'rounded',
-    icons = {
-      cmd = '⌘',
-      config = '🛠',
-      event = '📅',
-      ft = '📂',
-      init = '⚙️',
-      keys = '🗝',
-      plugin = '🔌',
-      runtime = '💻',
-      require = '🌙',
-      source = '📄',
-      start = '🚀',
-      task = '📌',
-      lazy = '💤',
-    },
-  },
+  ui = { border = 'rounded' },
   performance = {
     rtp = {
       disabled_plugins = {

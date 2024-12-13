@@ -1,11 +1,13 @@
+-- options.lua
 local set = vim.opt
 
+-- set.confirm = true
 set.autochdir = true
 set.autoread = true
 set.autowrite = true
 set.breakindent = true
 set.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus'
-set.confirm = true
+set.completeopt = 'menu,preview'
 set.cursorline = true
 set.foldopen:append('insert,jump')
 set.ignorecase = true
@@ -13,6 +15,7 @@ set.iskeyword:append('_')
 set.laststatus = 0
 set.linebreak = true
 set.mouse = 'a'
+set.mousescroll = 'ver:2,hor:0'
 set.number = true
 set.numberwidth = 4
 set.pumblend = 0
@@ -31,7 +34,6 @@ set.smartcase = true
 set.smoothscroll = true
 set.spelllang = { 'en' }
 set.splitbelow = true
-set.mousescroll = 'ver:2,hor:0'
 set.splitkeep = 'screen'
 set.splitright = true
 set.tabstop = 8
@@ -42,9 +44,9 @@ set.undolevels = 10000
 set.updatetime = 69
 set.virtualedit = 'block'
 set.whichwrap:append('<,>,[,],h,l')
+set.wildmode = 'list:longest,full:'
 set.winminwidth = 5
 set.wrap = false
-set.completeopt = 'menu,preview'
 
 -- lazy
 set.fillchars = {
@@ -67,4 +69,3 @@ set.shortmess:append({ W = true, I = true, c = true, C = true })
 -- FIXME:
 set.smartindent = true
 -- FIXME:
-set.wildmode = 'longest:full,full'
