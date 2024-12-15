@@ -1,7 +1,5 @@
 -- init.lua
-require('config.lazy')
+require('config.lazy') -- https://www.lazyvim.org/news
 
--- LazyVim configuration options
+-- lazyvim configuration `options`
 vim.g.autoformat = false
--- FIXME: this gets overridden by the lsp attach
--- vim.diagnostic.config({ virtual_text = false, })

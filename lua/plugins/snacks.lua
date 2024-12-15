@@ -1,6 +1,7 @@
 return {
-  'folke/snacks.nvim',
+  'folke/snacks.nvim', -- https://github.com/folke/snacks.nvim?tab=readme-ov-file#-features
   opts = {
+    -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
     dashboard = {
       preset = {
         header = [[ 

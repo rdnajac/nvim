@@ -27,6 +27,7 @@ require('lazy').setup({
   ui = { border = 'rounded' },
   performance = {
     rtp = {
+      -- reset = false,
       disabled_plugins = {
         'gzip',
         -- 'matchit',

@@ -3,7 +3,7 @@ return {
   opts = {
     cmdline = {
       enabled = true,
-      -- view = 'cmdline',
+      view = 'cmdline',
       format = {
         cmdline = { pattern = '^:', icon = ':', lang = 'vim' },
         filter = { pattern = '^:%s*!', icon = '!', lang = 'bash' },

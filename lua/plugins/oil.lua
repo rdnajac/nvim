@@ -1,7 +1,6 @@
 local M = { 'stevearc/oil.nvim' }
 
 -- Utility functions for Git status
--- stylua: ignore
 local function parse_output(proc)
   local result = proc:wait()
   local ret = {}
@@ -32,15 +31,10 @@ local function new_git_status()
   })
 end
 
--- Oil.nvim configuration
 M.cmd = 'Oil'
-M.keys = { { '-', '<CMD>Oil --float<CR>' } }
-
+M.keys = { { '-', '<CMD>Oil --float<CR>', desc = 'Open parent directory' } }
 M.opts = function()
-  -- Git utilities
   local git_status = new_git_status()
-
-  -- Refresh action override
   local refresh = require('oil.actions').refresh
   local orig_refresh = refresh.callback
   refresh.callback = function(...)
@@ -48,7 +42,6 @@ M.opts = function()
     orig_refresh(...)
   end
 
-  -- Return options for Oil.nvim
   return {
     default_file_explorer = true,
     view_options = {
