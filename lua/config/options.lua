@@ -1,13 +1,13 @@
 -- options.lua
 local set = vim.opt
 
--- set.confirm = true
 set.autochdir = true
 set.autoread = true
 set.autowrite = true
 set.breakindent = true
 set.clipboard = vim.env.SSH_TTY and '' or 'unnamedplus'
 set.completeopt = 'menu,preview'
+-- set.confirm = true
 set.cursorline = true
 set.foldopen:append('insert,jump')
 set.ignorecase = true
@@ -48,7 +48,7 @@ set.wildmode = 'list:longest,full:'
 set.winminwidth = 5
 set.wrap = false
 
--- lazy
+-- Lazy
 set.fillchars = {
   foldopen = '',
   foldclose = '',
@@ -60,12 +60,9 @@ set.fillchars = {
 set.foldlevel = 99
 set.foldmethod = 'expr'
 set.foldtext = ''
--- LazyVim wants to include `o` and `c`
-set.formatoptions = 'jrqlnt' -- tcqj
+set.formatoptions = 'jrqlnt' -- default is `tcqj`, LazyVim uses `o` and `c`
 set.inccommand = 'nosplit'
 set.jumpoptions = 'view'
 -- FIXME:
 set.shortmess:append({ W = true, I = true, c = true, C = true })
--- FIXME:
 set.smartindent = true
--- FIXME:

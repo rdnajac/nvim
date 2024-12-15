@@ -4,10 +4,9 @@ local del = vim.keymap.del
 
 map('n', '<leader>sp', "<cmd>lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('data') .. '/lazy'})<CR>")
 
--- TODO:
--- rm LazyVim wk tab and buffer
-map('c', '??', 'verbose set?<Left>', { noremap = true })
-map('c', '!!', '!./%', { noremap = true })
+-- TODO: rm LazyVim wk tab and buffer
+map('c', '??', 'verbose set?<Left>')
+map('c', '!!', '!./%')
 
 vim.cmd([[
 " format and write buffer
