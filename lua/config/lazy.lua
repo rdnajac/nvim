@@ -22,7 +22,10 @@ end
 -- }}}
 
 require('lazy').setup({
-  spec = { { 'LazyVim/LazyVim', import = 'lazyvim.plugins' }, { import = 'plugins' } },
+  spec = {
+    { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
+    { import = 'plugins', cond = not vim.env.LAZY },
+  },
   install = { colorscheme = { 'tokyonight' } },
   ui = { border = 'rounded' },
   performance = {

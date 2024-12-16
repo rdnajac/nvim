@@ -1,4 +1,5 @@
 -- keymaps.lua
+-- ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua
 local map = vim.keymap.set
 local del = vim.keymap.del
 
@@ -40,6 +41,4 @@ inoremap <silent> <localleader>l <C-x><C-l>
 inoremap <silent> <localleader>n <C-x><C-n>
 inoremap <silent> <localleader>t <C-x><C-]>
 inoremap <silent> <localleader>u <C-x><C-u>
-
-nnoremap <localleader>l :Lazy<CR>
 ]])

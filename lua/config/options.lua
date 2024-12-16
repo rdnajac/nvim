@@ -1,4 +1,5 @@
 -- options.lua
+-- ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/options.lua
 local set = vim.opt
 
 set.autochdir = true

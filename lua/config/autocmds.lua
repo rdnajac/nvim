@@ -1,4 +1,5 @@
 -- autocmds.lua
+-- ~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/autocmds.lua
 local au = vim.api.nvim_create_autocmd
 
 local function aug(name)
@@ -10,6 +11,40 @@ au('CmdwinEnter', {
   pattern = { '*' },
   callback = function()
     vim.cmd('quit')
+  end,
+})
+
+-- Set options for Lua files
+au('FileType', {
+  group = aug('lua'),
+  pattern = { 'lua' },
+  callback = function()
+    if client then
+      -- don't highlight vim code wrapped in vim.cmd([[]])
+      -- client.server_capabilities.semanticTokensProvider = nil
+      vim.api.nvim_set_hl(0, 'LspReferenceText', { default = true, bg = 'NONE', fg = 'NONE' })
+    end
+    vim.cmd('set formatoptions-=jo')
+  end,
+})
+
+au('FileType', {
+  group = aug('close_with_q'),
+  pattern = {
+    'oil',
+  },
+  callback = function(event)
+    vim.bo[event.buf].buflisted = false
+    vim.schedule(function()
+      vim.keymap.set('n', 'q', function()
+        vim.cmd('close')
+        pcall(vim.api.nvim_buf_delete, event.buf, { force = true })
+      end, {
+        buffer = event.buf,
+        silent = true,
+        desc = 'Quit oil buffer',
+      })
+    end)
   end,
 })
 
@@ -25,5 +60,6 @@ vim.cmd([[
   autocmd FileType javascript     setlocal sw=2 sts=2   expandtab
   autocmd FileType html,css,scss  setlocal sw=2 sts=2   expandtab
   autocmd FileType json,yaml,toml setlocal sw=2 sts=2   expandtab
-augroup END
+  "autocmd FileType *                       setlocal formatoptions-=jo
+  augroup END
 ]])
