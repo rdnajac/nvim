@@ -1,11 +1,21 @@
 # nvim config
 
+## Installation
+
+Build from source:
+
+```sh
+git clone https://github.com/neovim/neovim.git
+cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
+```
+
 ## TODO
 
-Add functions:
+blink:
 
-- Rename
-- Delete
+- make sure we trigger path completion on 'a'
+- no snippets in autocomplete
+- prioritize path over copilot complete
 
 ## Resources
 

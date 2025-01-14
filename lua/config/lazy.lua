@@ -25,12 +25,13 @@ require('lazy').setup({
   spec = {
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
     { import = 'plugins', cond = not vim.env.LAZY },
+    -- { dir = '~/.vim' },
   },
   install = { colorscheme = { 'tokyonight' } },
   ui = { border = 'rounded' },
   performance = {
     rtp = {
-      -- reset = false,
+      reset = false,
       disabled_plugins = {
         'gzip',
         -- 'matchit',

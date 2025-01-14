@@ -14,9 +14,12 @@ vim.cmd([[
 nnoremap Q <nop>
 nnoremap Q gggqG:w<CR>
 
+nmap yc yygccp
+
 " stop pressing shift
 nnoremap ; :
 vnoremap ; :
+cnoremap ; <CR>
 
 " buffer navigation
 nnoremap <tab>   :bnext<CR>

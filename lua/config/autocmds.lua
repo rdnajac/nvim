@@ -6,17 +6,25 @@ local function aug(name)
   return vim.api.nvim_create_augroup('user_' .. name, { clear = true })
 end
 
+au('FileType', {
+  group = aug('formatoptions'),
+  pattern = { '*' },
+  callback = function()
+    vim.opt_local.formatoptions:remove('o')
+    vim.opt_local.formatoptions:remove('j')
+  end,
+})
+
 au('CmdwinEnter', {
   group = aug('noCmdwin'),
-  pattern = { '*' },
+  -- pattern = { '*' },
   callback = function()
     vim.cmd('quit')
   end,
 })
 
--- Set options for Lua files
 au('FileType', {
-  group = aug('lua'),
+  group = aug('no_vimcmd_hl'),
   pattern = { 'lua' },
   callback = function()
     if client then
@@ -24,7 +32,6 @@ au('FileType', {
       -- client.server_capabilities.semanticTokensProvider = nil
       vim.api.nvim_set_hl(0, 'LspReferenceText', { default = true, bg = 'NONE', fg = 'NONE' })
     end
-    vim.cmd('set formatoptions-=jo')
   end,
 })
 
