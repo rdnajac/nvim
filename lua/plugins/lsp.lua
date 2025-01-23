@@ -5,7 +5,10 @@ return {
   opts = {
     ---@type vim.diagnostic.Opts
     diagnostics = {
-      -- virtual_text = { false },
+      virtual_text = {
+        prefix = 'icons',
+        -- false,
+      },
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = '🔥',

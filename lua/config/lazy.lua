@@ -24,6 +24,33 @@ end
 require('lazy').setup({
   spec = {
     { 'LazyVim/LazyVim', import = 'lazyvim.plugins' },
+    -- colorscheme (always load configs) {{{
+    {
+      'folke/tokyonight.nvim',
+      lazy = false, -- make sure we load this during startup
+      priority = 1000, -- and before all the other start plugins
+      opts = {
+        transparent = true,
+        -- terminal_colors = false,
+        styles = {
+          comments = { italic = true },
+          keywords = { italic = false, bold = true },
+          sidebars = 'transparent',
+          floats = 'transparent',
+        },
+        on_highlights = function(hl, _)
+          hl['@markup.raw.markdown_inline.comment'] = {
+            fg = '#39ff14',
+            bg = 'NONE',
+          }
+          hl['LspReferenceText'] = {
+            bg = 'NONE',
+          }
+        end,
+      },
+    },
+    -- }}}
+    -- if we pass LAZY=1, don't load our configs
     { import = 'plugins', cond = not vim.env.LAZY },
     -- { dir = '~/.vim' },
   },
@@ -31,7 +58,7 @@ require('lazy').setup({
   ui = { border = 'rounded' },
   performance = {
     rtp = {
-      reset = false,
+      -- reset = false,
       disabled_plugins = {
         'gzip',
         -- 'matchit',

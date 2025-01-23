@@ -3,14 +3,12 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { 'stylua' },
-      sh = { 'shfmt' },
+      -- sh = { 'shfmt' },
       python = { 'black' },
     },
   },
   formatters = {
     injected = { options = { ignore_errors = true } },
-    shfmt = {
-      prepend_args = { '-bn', '-ci' },
-    },
+    -- shfmt = { prepend_args = { '-bn', '-ci' }, },
   },
 }

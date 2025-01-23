@@ -1,7 +1,10 @@
 return {
   'folke/snacks.nvim', -- https://github.com/folke/snacks.nvim?tab=readme-ov-file#-features
   opts = {
+    -- https://github.com/folke/snacks.nvim/blob/main/docs/togglrre.md
+    toggle = { },
     indent = { enabled = false },
+
     -- https://github.com/folke/snacks.nvim/blob/main/docs/dashboard.md
     dashboard = {
       preset = {

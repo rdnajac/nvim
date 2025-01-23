@@ -11,6 +11,8 @@ cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
 
 ## TODO
 
+- don't do diagnostics on help markdown files
+
 blink:
 
 - make sure we trigger path completion on 'a'

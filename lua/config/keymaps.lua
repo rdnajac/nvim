@@ -3,7 +3,11 @@
 local map = vim.keymap.set
 local del = vim.keymap.del
 
-map('n', '<leader>sp', "<cmd>lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('data') .. '/lazy'})<CR>")
+-- quicksave
+-- del('n', '<leader>w')
+map('n', '<leader>w', ':w<CR>')
+
+-- map('n', '<leader>sp', "<cmd>lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('data') .. '/lazy'})<CR>")
 
 -- TODO: rm LazyVim wk tab and buffer
 map('c', '??', 'verbose set?<Left>')
@@ -44,4 +48,9 @@ inoremap <silent> <localleader>l <C-x><C-l>
 inoremap <silent> <localleader>n <C-x><C-n>
 inoremap <silent> <localleader>t <C-x><C-]>
 inoremap <silent> <localleader>u <C-x><C-u>
+
+" XXX: WIP
+nnoremap <localleader>bb i#!/bin/bash<CR>
+inoremap <localleader>bb #!/bin/bash<CR>
+
 ]])
