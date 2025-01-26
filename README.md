@@ -1,5 +1,15 @@
 # nvim config
 
+## vim config
+
+Use symbolic links to synchronize vim and nvim configuration files:
+
+- after/
+- autoload/
+- plugin/
+
+````sh
+
 ## Installation
 
 Build from source:
@@ -7,9 +17,9 @@ Build from source:
 ```sh
 git clone https://github.com/neovim/neovim.git
 cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo && sudo make install
-```
+````
 
-## TODO
+## TODO:
 
 - don't do diagnostics on help markdown files
 
