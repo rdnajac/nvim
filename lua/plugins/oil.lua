@@ -54,7 +54,8 @@ M.opts = function()
         end
         -- Dotfiles are hidden unless tracked
         if is_dotfile then
-          return not git_status[dir].tracked[name]
+          -- return not git_status[dir].tracked[name]
+          return true
         else
           -- Check if the file is gitignored
           return git_status[dir].ignored[name]
