@@ -18,3 +18,18 @@ au('FileType', {
     end
   end,
 })
+
+  -- autocmd FileType help,man hi Normal guibg=#1f2335
+  --
+au('FileType', {
+  group = aug('window_highlights'),
+  pattern = { 'help,man' },
+  callback = function()
+    -- make the window nornal bg 1f2335
+    vim.cmd([[ 
+    hi MyNormal guibg=#1f2335
+    setlocal winhighlight=Normal:MyNormal
+    ]])
+
+  end,
+})
