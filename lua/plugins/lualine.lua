@@ -7,7 +7,7 @@ return {
           return '󰒲'
         end,
         on_click = nil,
-      }
+      },
     },
   },
 }
