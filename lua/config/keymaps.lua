@@ -10,16 +10,4 @@ nmap S viwsa
 vmap S sa
 nmap sc sr
 vmap sc sr
-
-" XXX: WIP
-nnoremap <localleader>bb i#!/bin/bash<CR>
-inoremap <localleader>bb #!/bin/bash<CR>
-
-" TODO: Move to ftplugin
-
-" Insert hyperlink from clipboard
-vmap <buffer> <localleader>k S]f]a()<Esc>hp
-
-" Turn url into hyperlink
-vmap <buffer> <localleader>K S)i[]<Left>
 ]])
